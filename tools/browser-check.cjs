@@ -26,6 +26,15 @@ async function checkSite(browser, base = 'http://127.0.0.1:8080') {
  await page.setViewportSize({width:1440,height:1000});
  await page.goto(base + '/index.html');
  assert.equal(await page.locator('h1').textContent(),'Chemotech International');
+ const indexLinks=page.locator('nav[aria-label="Inside this profile"] a');
+ assert.equal(await indexLinks.count(),11,'Profile index must link all eleven sections');
+ const indexTargets=await indexLinks.evaluateAll(links=>links.map(link=>link.getAttribute('href')));
+ for(let i=0;i<indexTargets.length;i++){
+  await page.goto(base+'/index.html');
+  await page.locator('nav[aria-label="Inside this profile"] a').nth(i).click();
+  assert.equal(new URL(page.url()).hash,new URL(indexTargets[i],base+'/').hash);
+  assert.equal(await page.locator(new URL(page.url()).hash).count(),1,'Profile index target must exist');
+ }
  await page.goto(base + '/contact.html');
  const gstTops = await page.locator('.office .gstin').evaluateAll(rows => rows.map(r => r.getBoundingClientRect().top));
  assert(Math.abs(gstTops[0]-gstTops[1]) < 1, 'GST rows must align on desktop');

@@ -718,18 +718,30 @@ def profile_section(number, title, anchor):
     text=COMPANY["profile_pages"][str(number)]
     headings={'COMPANY DETAI LS','OF F ICES & GST REGISTRATIONS','BANKING & AUDIT','Head Office – Bihar','Delhi Office','Our Vision','Our Mission','We Value','TEAM','DESIGN','EXECUTION','Why Work With Us','Key Clients','Power & LED Display Projects','Automation, SCADA & WTP Instrumentation','Industrial Clients – VFD, PLC & Automation','Power & Electrical','Water & Wastewater','Automation & Instrumentation','Building, Energy & ICT'}
     replacements={'COMPANY DETAI LS':'COMPANY DETAILS','OF F ICES & GST REGISTRATIONS':'OFFICES & GST REGISTRATIONS','WE WI L L':'WE WILL','SAL ES, DESIGN & SERVICE TEAM':'SALES, DESIGN & SERVICE TEAM','END-TO-END, HANDL ED SEAML ESSLY':'END-TO-END, HANDLED SEAMLESSLY'}
-    chunks=[];pending=[]
+    headings.update(replacements.values())
+    eyebrows={'EST. 2014-15 · PATNA, BIHAR · INDIA · NEPAL · BHUTAN','WHAT WE DO','OEM PARTNERS INCLUDE','INSIDE THIS PROFILE','AT A GLANCE','VISION FOR CHEMOTECH INTERNATIONAL','KEY PERSONS IN THE CHEMOTECH TEAM','INDIA · NEPAL · BHUTAN'}
+    index_targets=['about.html#company-details','about.html#quality','about.html#vision','about.html#approach','about.html#team','about.html#how-we-work','projects.html#presence','products.html#catalogue','solutions.html#pd','solutions.html#partners','projects.html#clients']
+    chunks=[];pending=[];in_index=False
     def flush():
-        if pending: chunks.append('<p>'+E(' '.join(pending))+'</p>');pending.clear()
+        if pending: chunks.append('<p>'+' '.join(pending)+'</p>');pending.clear()
     for line in text.splitlines():
         label=replacements.get(line,line)
+        item=re.match(r'^(0[1-9]|1[01]) (.+)$',line) if number==2 else None
+        if item:
+            flush()
+            if not in_index: chunks.append('<nav aria-label="Inside this profile"><ol class="profile-index">');in_index=True
+            chunks.append(f'<li><a href="{index_targets[int(item[1])-1]}"><span class="profile-index__number">{item[1]}</span><span>{E(item[2])}</span></a></li>')
+            continue
+        if in_index: chunks.append('</ol></nav>');in_index=False
+        formatted=('<span class="profile-letterspaced">'+E(label)+'</span>') if label in eyebrows or re.match(r'^(SECTION \d{2}|\d{2} · )',label) else E(label)
         if line in headings or line in replacements:
             flush();chunks.append('<h3>'+E(label)+'</h3>')
         elif re.match(r'^(Name of the|Type of Company|Partners |Year of|PAN No\.|Phone |Email |HDFC Bank|A/c No\.|IFSC |Auditor |34\+|29\+|19\+|8\+|21 yrs|8 yrs|5 yrs|Since 2014|Ours is|We are passionate|CHEMOTECH is tough)',line):
-            flush();pending.append(label)
+            flush();pending.append(formatted)
         elif number==1:
-            flush();chunks.append('<p>'+E(label)+'</p>')
-        else: pending.append(label)
+            flush();chunks.append('<p>'+formatted+'</p>')
+        else: pending.append(formatted)
+    if in_index: chunks.append('</ol></nav>')
     flush()
     return f'<section class="section" id="{anchor}"><div class="wrap"><h2>{E(title)}</h2><div class="profile-transcript">{"".join(chunks)}</div></div></section>'
 

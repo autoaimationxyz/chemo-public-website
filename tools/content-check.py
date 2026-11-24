@@ -7,6 +7,8 @@ args=parser.parse_args()
 ROOT=Path(__file__).resolve().parents[1]
 def load(name): return json.loads((ROOT/'tools'/name).read_text(encoding='utf-8'))
 def norm(text): return re.sub(r'[^a-z0-9]+','',html.unescape(text).lower())
+spaced_letters=re.compile(r'(?<![A-Za-z])(?:[A-Za-z][ \t]+){3,}[A-Za-z](?![A-Za-z])')
+assert not spaced_letters.search((ROOT/'tools/approved-profile-public.txt').read_text(encoding='utf-8')), 'Literal letter spacing remains in the approved reference.'
 evidence=norm((ROOT/'tools/approved-profile-public.txt').read_text(encoding='utf-8'))
 products=load('products.json');company=load('company.json');solutions=load('solutions.json')
 assert len(products)==56
@@ -68,6 +70,7 @@ for identifier in re.findall(r'\b(?:\d{2}/\d{2}/\d{4}|[A-Z0-9][A-Z0-9/-]*\d[A-Z0
     assert norm(identifier) in registration_text,f'Missing registration identifier from profile page 4'
 for path in pages:
     text=path.read_text(encoding='utf-8')
+    assert not spaced_letters.search(html.unescape(text)),f'Literal letter spacing remains in {path.name}'
     assert not re.search(r'332|50\+|Bonex|\bRecon\b',text),path
     for href in re.findall(r'(?:href|src)="([^"]+)"',text):
         if href.startswith(('http:','https:','mailto:','tel:','#','data:')): continue
@@ -77,6 +80,16 @@ for path in pages:
         assert text.count('<h1>')==1,path
         assert 'rel="canonical"' in text and 'application/ld+json' in text,path
         for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>',text,re.S):json.loads(block)
+# The home index keeps its section numbering, not the PDF's page numbering.
+index_html=(ROOT/'index.html').read_text(encoding='utf-8')
+index_block=re.search(r'<nav aria-label="Inside this profile">(.*?)</nav>',index_html,re.S)
+assert index_block,'Missing home profile index'
+index_items=re.findall(r'<li><a href="([^"]+)"><span class="profile-index__number">(\d{2})</span><span>(.*?)</span></a></li>',index_block[1])
+assert [number for _,number,_ in index_items]==[f'{n:02d}' for n in range(1,12)]
+for href,number,title in index_items:
+    assert f'{number} {html.unescape(title)}' in company['profile_pages']['2'].splitlines()
+    filename,anchor=href.split('#')
+    assert re.search(r'\bid="'+re.escape(anchor)+'"',(ROOT/filename).read_text(encoding='utf-8')),f'Missing index target: {href}'
 # Regenerate elsewhere and compare all generated HTML byte-for-byte.
 with tempfile.TemporaryDirectory() as tmp:
     subprocess.run([sys.executable,str(ROOT/'tools/build.py'),tmp],check=True)
