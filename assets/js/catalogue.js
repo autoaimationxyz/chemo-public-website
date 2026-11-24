@@ -252,8 +252,8 @@
     var imgs = p.images;
     var c = CATS[p.cat];
     if (!imgs.length) {
-      return '<div class="pd-main"><div class="equipment-tile">' + (p.illustration || c.icon) + '<span class="illustration-caption">Configuration illustration</span></div></div>' +
-        '<p class="pd-caption"><span>Conceptual illustration. Ask our team for model-specific photographs and datasheets.</span></p>';
+      return '<div class="pd-main"><div class="equipment-tile">' + (p.illustration || c.icon) + '</div></div>' +
+        '<p class="pd-caption"><span></span></p>';
     }
     var im = imgs[i];
     var h = '<div class="pd-main"><img src="' + im.src + '" alt="' + esc(im.title) + '"></div>' +
@@ -293,7 +293,7 @@
       '<div class="pd-body" tabindex="0" role="region" aria-label="Product specifications and variants"><div class="pd-media" id="pd-media">' + mediaHtml(p, imgIndex || 0) + "</div>" +
       '<div class="pd-info"><p class="lead">' + highlight(p.desc) + "</p>" +
       (p.note ? '<p class="pd-note">' + esc(p.note) + "</p>" : "") +
-      '<div class="pd-block"><h3>Specifications at a glance</h3><dl class="spec-grid">' + (p.specs || []).map(function (s) { return '<div><dt>' + esc(s[0]) + '</dt><dd>' + esc(s[1]) + '</dd></div>'; }).join('') + '</dl><p class="spec-note">Ratings and options vary by model. Ask our team for the datasheet and selection for your site.</p></div>' +
+      '<div class="pd-block"><h3>Specifications at a glance</h3><dl class="spec-grid">' + (p.specs || []).map(function (s) { return '<div><dt>' + esc(s[0]) + '</dt><dd>' + esc(s[1]) + '</dd></div>'; }).join('') + '</dl></div>' +
 
       '<div class="pd-block"><h3>Main makes</h3><ul class="mk">' + p.main.map(function (m) { return '<li class="' + (m === state.make ? "is-hit" : "") + '">' + esc(m) + "</li>"; }).join("") + "</ul></div>" +
       (p.variants.length ? '<div class="pd-block"><h3>' + p.variants.length + (p.variants.length === 1 ? " type" : " variants & types") + " · makes we supply</h3>" + vhtml + "</div>" : "") + "</div></div>" +

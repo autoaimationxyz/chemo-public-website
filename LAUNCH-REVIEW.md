@@ -1,34 +1,28 @@
-# Pre-launch repair verification — 24 November 2026
+# Final-profile reconciliation — 24 November 2026
 
-## Approved content
+Owner rule: the website matches the final 12 November 2026 company profile exactly. **BANK DETAILS: INCLUDE.** The old PAN/audit/banking omission policy no longer applies. The PDF itself is not uploaded.
 
-Only the final 12 November 2026 company-profile PDF supplies factual claims. Public reference text is sanitized; the original PDF, banking, audit details, PAN/KYC, prices and confidential lists are excluded.
+| Profile section | Website page | Result |
+| --- | --- | --- |
+| Cover, what we do, index and at a glance (1–2) | Home | Complete profile text restored; editorial hero, slogans and conceptual animation removed |
+| Key information (3) | About — Key Information | PAN/common-office note, both bank entries and auditor added in their source section; offices/contacts retained |
+| Licences & Registrations (4) | Certifications | Existing approved entries retained; PAN and 09/04/2024 date restored |
+| Quality Policy (5) | About | Full source wording, three commitments, responsibility statement and Partner restored |
+| Vision, Mission & Values (6) | About | Complete mission commitments and all six values copied without shortened rewrites |
+| About Chemotech (7) | About | All paragraphs and the five delivery steps restored |
+| Our Team (8) | About | All eight people and complete source qualifications/experience retained/restored |
+| How We Work / Execution Approach (9–10) | About | Complete team/design/execution/repeat-order text, six steps and five Why Work With Us statements restored |
+| Our Presence (11) | Projects | All industries retained with exact introduction |
+| Product Range (12–15) | Products | All 56 families/scopes/main makes retained; 300+ aggregate retained; no master-only variant details added |
+| Our Solutions (16–21) | Solutions | Complete source sections plus all 36 source caption/make images retained |
+| OEM Partners (22) | Solutions | Full source wording and names restored, including 40+ and 80 more makes statements |
+| Our Clients (23) | Projects | Complete names, project capacities/locations and ongoing status retained |
+| Offices (3) | Contact | Approved addresses, phones, emails and GST retained; form remains |
 
-| Public content | PDF pages | Result |
-|---|---|---|
-| Establishment, countries, offices, phones, emails and GST | 2–3 | Reconciled; establishment uses 2014–15 |
-| Contractor licences and business registrations | 4 | Numbers and dates checked; PAN omitted |
-| Quality policy, vision, mission and all six values | 5–6 | Restored missing policy and commitments |
-| Company approach and eight team members | 7–10 | Names, roles, qualifications and experience checked |
-| Industries | 11 | All 23 listed sectors retained; public aggregate 20+ |
-| Product families, scopes and main makes | 12–15 | All 56 reconciled in printed order; stable deep links preserved |
-| Solution captions and makes | 16–21 | All 36 reconciled; old extra-photo captions excluded |
-| OEM partners | 22 | Public aggregate 40+; Bronx Systems/Recons corrected; KSB/Phoenix Contact restored; unlisted OEM removed |
-| Clients and project references | 23 | Satya Sai Construction Works restored; Umang scope and ongoing DMRC Phase-IV status corrected |
+Removals: homepage editorial hero and capability slogans; conceptual engineering diagram and its focus/pause controls; shortened about/mission/value/team paraphrases; four invented solution-group summaries and planning checklists; general marketing CTA paragraphs; non-profile application guidance and model-selection disclaimers; representative images from outside the profile; conceptual product drawings. They were replaced by original profile sections or removed where no profile counterpart exists. Navigation, forms, quick-contact controls, image credits and legal footer text remain permitted exceptions.
 
-Individual master-list variant claims were removed. The website retains the approved aggregate 300+ and offers detailed options on request. Product and solution sections retain their own approved make associations.
+The source checker requires complete assigned sections and verifies the product/make data against the complete profile reference. It requires the PAN/date and banking/audit fields instead of banning them. The ignored local pattern file has no active final-profile exclusions under INCLUDE. Ordinary fast-forward publication to both branches is used, with no force-push.
 
-## Technical verification
+Verification: build, content, browser, journey and automated accessibility checks. Browser coverage includes all eight pages at 320/390/768/1024/1440/1920px, catalogue/search/deep links, enquiry persistence, mobile navigation, reduced motion and email-copy fallback. Automated WCAG checks cover mobile/desktop pages and product dialogs; this does not certify all accessibility or physical-device behaviour.
 
-- Generated HTML matches a clean rebuild byte for byte.
-- Content checks verify approved product/solution/company/project text, source revision, private-data exclusion, local resources and metadata.
-- All eight pages pass overflow checks at 320, 390, 768, 1024, 1440 and 1920px.
-- Browser checks cover catalogue searches, makes, categories, empty states, pagination, dialogs, legacy numbering/links, saved selections and cross-tab updates.
-- Forms validate required fields, prepare email drafts, invalidate stale drafts and provide a selectable copy fallback. No backend submission or delivery is claimed.
-- Automated axe WCAG A/AA checks pass on eight pages and the product dialog at 390 and 1440px. These automated checks do not constitute a complete accessibility certification.
-- Text no longer fades to low contrast or disappears pending scroll. Reduced motion and animation pause remain supported.
-- Canonicals, absolute social metadata, organization structured data, robots and sitemap target the new GitHub Pages address.
-- Product images have stable dimensions and lazy loading. Removing unsupported variant payload reduces catalogue HTML and parsing work. No third-party form or analytics scripts were added.
-- Repository CI runs content, browser, journey and accessibility checks on pushes and pull requests.
-
-Browser verification uses Chromium. Safari, physical devices, real-world network performance and delivery through a visitor’s email provider remain outside these checks. Existing `web.schoolerp.org/chemotech-international/` is untouched.
+The existing schoolerp site, unrelated repositories and Google Drive are unchanged.
