@@ -305,5 +305,62 @@
       }
     ],
     "auditor": "Mr. Ajit Choudhary – CA"
+  },
+  "approved_content": {
+    "about_paragraphs": [
+      "CHEMOTECH is a young team of engineers and professionals who supply, install, commission and maintain electrical, power, automation and water-treatment systems. We have earned a reputation for professionalism while working with organisations of repute.",
+      "Since 2014-15, CHEMOTECH has evolved into a stronger and more focused firm, serving industry, infrastructure and government projects across India, Nepal and Bhutan. Our team brings a vast range of experience across electrical, power, automation, water and building systems, and is always looking for new challenges.",
+      "Ours is a unique combination of products and services under one roof. Working with leading partner brands, we recommend the right equipment for each requirement and take responsibility for the complete job – from selection and supply to installation, commissioning and after-sales support – giving our clients a single point of responsibility.",
+      "We are passionate about the quality of work we do. This is one of the reasons, we believe, that our clients have entrusted us with more and more challenging assignments over the years. Our consultative approach – guided by the client's site conditions, specifications and budget – is time-tested and effective. Our most successful projects are usually collaborative efforts, in which the CHEMOTECH team and the client work closely together, producing practical, reliable and result-oriented solutions.",
+      "CHEMOTECH is tough under pressure and committed to timelines. You can rest assured that everything – from requirement study and design, sourcing and supply to installation, commissioning and maintenance – will be handled seamlessly."
+    ],
+    "vision": "Uniquely serving customers with a clear understanding of their activity – which fuels our passion to provide innovative power solutions.",
+    "mission_intro": "Consistently exceeding customer expectations. For this, we are committed to:",
+    "mission_commitments": [
+      "Continue with a work culture that supports driving results & engagement",
+      "Serve our customers' needs",
+      "Respect customers' desires",
+      "Provide tailored solutions to the customers' needs",
+      "Apply a customer-driven strategy leading to improved customer satisfaction"
+    ],
+    "team_bios": [
+      "A Mechanical Engineer with more than 34 years of experience in marketing and after-sales support for electro-mechanical equipment such as Diesel Generating Sets, Industrial Motors, Power and Distribution Transformers, Electrical Panels etc.",
+      "A Science Graduate with more than 29 years of experience in marketing and project execution.",
+      "A Graduate with more than 19 years of experience in engineering material purchase and project execution, and 14 years' experience in sales and marketing of industrial equipment, consumables & chemicals.",
+      "A Graduate in Mechanical Engineering with more than 8 years of experience in industrial water treatment and steam distribution projects."
+    ],
+    "how_we_work": [
+      [
+        "Team",
+        "An intelligent, devoted and dedicated team of highly qualified, motivated and experienced professionals is the main strength of the company."
+      ],
+      [
+        "Design",
+        "We design the equipment to ensure a cost-effective solution."
+      ],
+      [
+        "Execution",
+        "We execute turnkey projects in the shortest possible time with a totally professional approach, leaving clients totally satisfied."
+      ],
+      [
+        "Repeat orders from many clients",
+        "Repeat orders from many satisfied clients for the same and other projects. The Chemotech team has earned the respect of many clients."
+      ]
+    ],
+    "execution_steps": [
+      "Understand the process requirement and operating conditions.",
+      "Develop the appropriate technical solution and equipment selection.",
+      "Coordinate electrical, instrumentation, automation and process requirements.",
+      "Supply and integrate equipment, panels, instruments and associated systems.",
+      "Support installation, testing and commissioning.",
+      "Provide troubleshooting, preventive maintenance and ongoing service support."
+    ],
+    "why_work_with_us": [
+      "Single-point coordination across process, electrical and automation requirements.",
+      "Practical engineering focused on reliability, maintainability and ease of operation.",
+      "Wide product portfolio for industrial utilities and process applications.",
+      "Capability to integrate third-party equipment with PLC / HMI / SCADA based controls.",
+      "Service-oriented support for commissioning, troubleshooting and plant improvement."
+    ]
   }
 }

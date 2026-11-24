@@ -538,11 +538,3 @@ summary { cursor:pointer; padding:18px 0; font-size:1rem; font-weight:600; color
 .selection-notice { font-size:1rem; line-height:1.7; margin-bottom:16px; color:var(--purple); }
 .selection-notice:empty { display:none; }
 .quote-catalogue-link { margin-bottom:24px; }
-
-.profile-transcript { max-width:80ch; font-size:1rem; line-height:1.7; overflow-wrap:anywhere; margin-top:24px; }
-.profile-transcript p { margin:0 0 16px; }
-.profile-transcript h3 { margin:28px 0 16px; color:var(--purple); font-size:1.125rem; }
-.profile-letterspaced { letter-spacing:.12em; text-transform:uppercase; }
-.profile-index { list-style:none; margin:0 0 16px; padding:0; }
-.profile-index a { display:flex; align-items:baseline; gap:16px; padding:12px 0; }
-.profile-index__number { flex:0 0 2ch; font-variant-numeric:tabular-nums; }

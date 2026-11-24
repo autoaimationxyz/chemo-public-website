@@ -18,23 +18,20 @@ async function checkSite(browser, base = 'http://127.0.0.1:8080') {
     assert(await page.locator('#cat-search').evaluate(el => parseFloat(getComputedStyle(el).fontSize) >= 16), 'Input text is too small');
    }
    if (name === 'solutions') {
-    assert.equal(await page.locator('.application-photo').count(),36,'Every final-profile solution image remains available');
+    assert(await page.locator('.checklist li').first().evaluate(el => parseFloat(getComputedStyle(el).paddingLeft) >= 20), 'Bullet row padding is missing');
    }
   }
   console.log(`PASS: eight pages at ${width}px`);
  }
  await page.setViewportSize({width:1440,height:1000});
  await page.goto(base + '/index.html');
- assert.equal(await page.locator('h1').textContent(),'Chemotech International');
- const indexLinks=page.locator('nav[aria-label="Inside this profile"] a');
- assert.equal(await indexLinks.count(),11,'Profile index must link all eleven sections');
- const indexTargets=await indexLinks.evaluateAll(links=>links.map(link=>link.getAttribute('href')));
- for(let i=0;i<indexTargets.length;i++){
-  await page.goto(base+'/index.html');
-  await page.locator('nav[aria-label="Inside this profile"] a').nth(i).click();
-  assert.equal(new URL(page.url()).hash,new URL(indexTargets[i],base+'/').hash);
-  assert.equal(await page.locator(new URL(page.url()).hash).count(),1,'Profile index target must exist');
- }
+ await page.locator('[data-system-mode="water"]').click();
+ assert.equal(await page.locator('.system-experience').getAttribute('data-system'), 'water');
+ assert((await page.locator('#system-copy').textContent()).includes('Treatment'));
+ await page.locator('.motion-toggle').click();
+ assert.equal(await page.locator('.motion-toggle').getAttribute('aria-pressed'), 'true');
+ assert.equal(await page.locator('.signal-flow').first().evaluate(el => getComputedStyle(el).animationPlayState), 'paused');
+ await page.locator('.motion-toggle').click();
  await page.goto(base + '/contact.html');
  const gstTops = await page.locator('.office .gstin').evaluateAll(rows => rows.map(r => r.getBoundingClientRect().top));
  assert(Math.abs(gstTops[0]-gstTops[1]) < 1, 'GST rows must align on desktop');
@@ -88,7 +85,7 @@ async function checkSite(browser, base = 'http://127.0.0.1:8080') {
  assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'),'false');
  await page.emulateMedia({reducedMotion:'reduce'});
  await page.goto(base + '/index.html');
- assert.equal(await page.locator('.profile-transcript').first().evaluate(el=>getComputedStyle(el).animationName),'none');
+ assert.equal(await page.locator('.hero__copy').evaluate(el=>getComputedStyle(el).animationName),'none');
  await page.setViewportSize({width:390,height:844});
  await page.goto(base + '/products.html#p-57');
  assert((await page.locator('#pd-title').textContent()).includes('Water Quality Analysers'));
@@ -110,7 +107,7 @@ async function checkSite(browser, base = 'http://127.0.0.1:8080') {
  await page.goto(base + '/company-profile.html#clients');
  await page.waitForURL('**/projects.html#clients');
  await page.goto(base + '/solutions.html#wp');
- await page.locator('a[href="products.html#cat-wp"]').click();
+ await page.locator('#wp a[href="products.html#cat-wp"]').click();
  assert.equal(await page.locator('.pcard:visible').count(),8);
  await page.goto(base + '/contact.html');
  await page.locator('[data-copy-message]').click();
@@ -126,7 +123,7 @@ async function checkSite(browser, base = 'http://127.0.0.1:8080') {
  assert(await page.locator('.prepared-message').isHidden());
  assert(await page.locator('.form-status').isHidden());
  assert.deepEqual(errors,[]);
- console.log('PASS: latest profile numbering, analyser family and legacy enquiry/deep-link compatibility; complete profile sections, aligned GST rows, PDF removal, capability navigation, search, categories, makes, reset, empty state, specs, enquiry persistence, deep links, search highlighting, mobile dialog/menu, reduced motion; no JS errors.');
+ console.log('PASS: latest profile numbering, analyser family and legacy enquiry/deep-link compatibility; system focus and pause, aligned GST rows, PDF removal, capability navigation, search, categories, makes, reset, empty state, specs, enquiry persistence, deep links, search highlighting, mobile dialog/menu, reduced motion; no JS errors.');
  await page.close();
 }
 module.exports = checkSite;

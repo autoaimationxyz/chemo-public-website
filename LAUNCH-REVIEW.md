@@ -1,28 +1,44 @@
-# Final-profile reconciliation — 24 November 2026
+# Design restoration and content review — 24 November 2026
 
-Owner rule: the website matches the final 12 November 2026 company profile exactly. **BANK DETAILS: INCLUDE.** The old PAN/audit/banking omission policy no longer applies. The PDF itself is not uploaded.
+**Design = 7ba7c25 layout; content = final profile including PAN, banking and audit details.** The final profile is dated 12 November 2026. Its wording is integrated into the website design; its PDF page structure is not copied.
 
-| Profile section | Website page | Result |
+## Exact content changes against 7ba7c25
+
+| Page | Added or corrected content | Profile pages |
 | --- | --- | --- |
-| Cover, what we do, index and at a glance (1–2) | Home | Complete profile text restored; editorial hero, slogans and conceptual animation removed |
-| Key information (3) | About — Key Information | PAN/common-office note, both bank entries and auditor added in their source section; offices/contacts retained |
-| Licences & Registrations (4) | Certifications | Existing approved entries retained; PAN and 09/04/2024 date restored |
-| Quality Policy (5) | About | Full source wording, three commitments, responsibility statement and Partner restored |
-| Vision, Mission & Values (6) | About | Complete mission commitments and all six values copied without shortened rewrites |
-| About Chemotech (7) | About | All paragraphs and the five delivery steps restored |
-| Our Team (8) | About | All eight people and complete source qualifications/experience retained/restored |
-| How We Work / Execution Approach (9–10) | About | Complete team/design/execution/repeat-order text, six steps and five Why Work With Us statements restored |
-| Our Presence (11) | Projects | All industries retained with exact introduction |
-| Product Range (12–15) | Products | All 56 families/scopes/main makes retained; 300+ aggregate retained; no master-only variant details added |
-| Our Solutions (16–21) | Solutions | Complete source sections plus all 36 source caption/make images retained |
-| OEM Partners (22) | Solutions | Full source wording and names restored, including 40+ and 80 more makes statements |
-| Our Clients (23) | Projects | Complete names, project capacities/locations and ongoing status retained |
-| Offices (3) | Contact | Approved addresses, phones, emails and GST retained; form remains |
+| About — company information | PAN No. and common-for-all-offices note | 3 |
+| About — Banking & Audit | Both bank names/branches, account numbers, IFSCs and the auditor; styled with the existing company-facts block | 3 |
+| About — approach | Full five company-background paragraphs replace shortened paraphrases inside the original two-column section | 7 |
+| About — mission | Exact introduction and all five commitments replace the abbreviated sentence | 6 |
+| About — values | Add the values introduction; normalize the Passion apostrophe to the source wording; keep all six existing values/cards | 6 |
+| About — quality policy | Add the profile's Partner sign-off; existing policy, three commitments and responsibility statement already match | 5 |
+| About — team | Restore the four key biographies verbatim, including A/Graduate wording, years of experience, equipment examples, 14 years' sales experience and water/steam project wording. Keep the same people, roles and card layout | 8 |
+| Certifications | Add PAN and its registration date in the existing Tax & Business Registrations table; include PAN in the page description | 4 |
+| Solutions — delivery | Add How We Work (team/design/execution/repeat orders), quality/safety statements, the execution introduction and six steps, and all five Why Work With Us statements inside the existing delivery section | 9–10 |
 
-Removals: homepage editorial hero and capability slogans; conceptual engineering diagram and its focus/pause controls; shortened about/mission/value/team paraphrases; four invented solution-group summaries and planning checklists; general marketing CTA paragraphs; non-profile application guidance and model-selection disclaimers; representative images from outside the profile; conceptual product drawings. They were replaced by original profile sections or removed where no profile counterpart exists. Navigation, forms, quick-contact controls, image credits and legal footer text remain permitted exceptions.
+## Compared and already correct
 
-The source checker requires complete assigned sections and verifies the product/make data against the complete profile reference. It requires the PAN/date and banking/audit fields instead of banning them. The ignored local pattern file has no active final-profile exclusions under INCLUDE. Ordinary fast-forward publication to both branches is used, with no force-push.
+| Profile section | Website | Result |
+| --- | --- | --- |
+| Establishment, countries, counts and capabilities | Home and supporting pages | No factual correction needed; original hero and animated model restored |
+| Offices, phones, emails, GST and partners | Contact, About, footer | No correction needed |
+| Licences/contractor/business registrations | Certifications | No correction beyond the PAN/date row |
+| Vision | About | Existing wording matches |
+| Support team, qualifications and experience | About | All four support-team cards already match |
+| Industries | Projects | All 23 sectors and 20+ aggregate retained |
+| Product range | Products | All 56 scopes/main makes already match; catalogue layout, guidance, imagery and controls restored |
+| Solution captions and makes | Solutions/product dialogs | All 36 approved entries already match |
+| OEM partners | Solutions | 40+ claim and approved names already correct, including Bronx Systems, Recons, KSB and Phoenix Contact |
+| Clients/projects | Projects | Approved names, locations, capacities, Satya Sai and Umang's ongoing DMRC Phase-IV wording already correct; complete original layout restored |
 
-Verification: build, content, browser, journey and automated accessibility checks. Browser coverage includes all eight pages at 320/390/768/1024/1440/1920px, catalogue/search/deep links, enquiry persistence, mobile navigation, reduced motion and email-copy fallback. Automated WCAG checks cover mobile/desktop pages and product dialogs; this does not certify all accessibility or physical-device behaviour.
+## Design verification
 
-The existing schoolerp site, unrelated repositories and Google Drive are unchanged.
+All CSS, JavaScript, images and the animated system diagram are restored byte-for-byte from 7ba7c25. A baseline hash manifest protects them. Home, Products, Projects, Contact, Quote and the legacy redirect regenerate byte-for-byte as at that commit. Only About, Solutions and Certifications receive the content additions above. No original page section, image or interactive element is removed.
+
+PDF cover/index pages, numbered PDF section labels and literal letter-spaced headings are absent from rendered pages. The source checker rejects their return. The normalized source reference may retain document headings as evidence, but they are not rendered as website sections.
+
+## Validation
+
+Run build.py, content-check.py, browser-check.cjs, journey-check.cjs and accessibility-check.cjs. The original browser journeys, system focus/pause, imagery, six viewport sizes, catalogue/deep links, mobile menu, enquiry persistence, reduced motion and copy fallback are retained. Screenshots are captured for Home, About and Projects at 390px and 1440px outside the public repository. Automated accessibility checks do not replace physical-device or complete assistive-technology review.
+
+Publication is an ordinary new commit pushed to main and gh-pages together, without git revert or force-push. The PDF itself is not uploaded. Schoolerp, unrelated repositories and Drive remain unchanged.

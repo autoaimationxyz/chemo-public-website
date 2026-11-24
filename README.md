@@ -1,31 +1,29 @@
 # Chemotech International website
 
-The website matches **Chemotech International - Company Profile (Final, Nov 2026).pdf**, dated 12 November 2026, exactly. **BANK DETAILS: INCLUDE**, by the owner's decision on 24 November 2026. PAN, its registration date, auditor information and both banking entries are required profile content. Do not apply the earlier omission rule.
+**Design = 7ba7c25 layout; content = final profile including PAN, banking and audit details.** The authoritative content source is the final company profile dated 12 November 2026. The profile supplies facts and wording, not the website's structure.
 
-Navigation, enquiry forms, WhatsApp/Call links, image credits and legal footer text are the only non-profile content exceptions. The original PDF is not uploaded or linked for download. The existing schoolerp site is untouched.
+Keep the approved home hero, animated system diagram, imagery, catalogue and guidance, project/solution layouts, navigation and WhatsApp/mobile Call controls. Do not replace them with PDF cover pages, section-number labels, a PDF index or literal letter-spaced headings. The PDF itself is not uploaded or offered for download.
 
-## Source and page mapping
+## Sources
 
-`tools/approved-profile-public.txt` contains the complete extracted profile text. `tools/company.json` holds the page-by-page approved text and structured company information, including the bank decision. `tools/products.json` has exactly the 56 product families, their printed scopes and main makes; individual master-list variant rows remain excluded because the final PDF does not enumerate them. `tools/solutions.json` has the 36 final-profile image captions and makes.
+- `tools/build.py`: approved page templates with profile-backed content additions.
+- `tools/company.json`: company, offices, contacts, projects, PAN, banking/audit and exact approved copy for company background, mission, biographies and execution.
+- `tools/products.json`: 56 families, approved scopes and main makes. Do not import extra master-list variant rows.
+- `tools/solutions.json`: 36 approved solution captions and make associations.
+- `tools/approved-profile-public.txt`: normalized reference text from the final profile, including the owner-approved financial and audit information.
+- `tools/design-baseline.json`: hashes of every original design asset and the system diagram from 7ba7c25. The check rejects changed or missing assets.
 
-| Profile pages | Website |
-| --- | --- |
-| 1–2, cover, index and at a glance | Home |
-| 3, key information, offices, PAN, banking and audit | About — Key Information |
-| 4, licences and registrations, including PAN/date | Licences & Registrations |
-| 5–10, quality, mission/values, background, team and execution | About |
-| 11, industries served | Projects — Our Presence |
-| 12–15, product families and main makes | Products |
-| 16–22, solutions and OEM partners | Solutions |
-| 23, clients and projects | Projects |
+## Content changes within the restored design
 
-Contact repeats the approved office details alongside the enquiry form. Product IDs, saved enquiries and legacy redirects stay compatible. Only solution photos from the final profile are shown; the old conceptual engineering scene and extra representative product imagery are removed. Source sections are complete rather than shortened marketing summaries.
+About adds PAN/common-office wording to company facts and a Banking & Audit block using the existing company-facts styling. It restores full company-background paragraphs, the mission introduction and five commitments, values introduction, policy sign-off and complete biographies for the four key people. The four support-team cards, names, roles, qualifications and experience figures remain correct.
 
-Edit sources and run `python tools/build.py .`; generated HTML must match a clean rebuild. The content check verifies complete source sections, product/make evidence, required registration/banking/audit items, local links, metadata and reproducible output. It no longer bans approved profile fields.
+Certifications adds the PAN/date row to the existing registrations table. Solutions keeps its four disciplines, galleries and delivery chain, and adds the final profile's How We Work, six execution steps and five Why Work With Us statements inside the existing delivery section, using its existing disclosure/list styles.
+
+Home, Products, Projects, Contact and Quote retain the approved page content and structure. Product makes, solution captions, OEM names, client names, project wording, counts, licences and contact details were compared with the final profile and did not need further corrections. See LAUNCH-REVIEW.md for the page-by-page review.
 
 ## Before every push
 
-Start `python -m http.server 8080` in another terminal. Playwright, Chromium and axe-core are test dependencies installed outside this static checkout.
+Start `python -m http.server 8080` in another terminal. Playwright, Chromium and axe-core are installed outside the checkout.
 
 ```sh
 python tools/build.py .
@@ -35,24 +33,20 @@ node tools/journey-check.cjs
 node tools/accessibility-check.cjs
 ```
 
-Stop if a check fails. Then commit only the intended public files and publish the same commit to both branches:
+The content check requires the PAN/date, banking and auditor facts, validates approved copy, checks unchanged design assets, rejects PDF section/index layouts and literal letter spacing, and verifies links, metadata and reproducible HTML. Browser checks retain the original system-diagram focus/pause, catalogue, mobile, form and enquiry journeys. Do not remove a check simply to make a different design pass.
+
+Stop on any failure. Commit only intended public files, then publish one commit to both branches:
 
 ```sh
 git push --atomic origin HEAD:main HEAD:gh-pages
 ```
 
-Do not force-push. `main` is the source and `gh-pages` is the deployment. GitHub Actions runs the content check without `--require-private`, as it has no local pattern file.
+No force-push or history revert is used. GitHub Actions runs without `--require-private` because it does not have the ignored local file. `tools/private-patterns.txt` has no active bans on the owner-approved PAN/banking/audit content. It remains local and must never be committed.
 
-`tools/private-patterns.txt` stays local and ignored. With BANK DETAILS set to INCLUDE, it has no active bans on final-profile content. Its status is PASSED with zero patterns; the mandatory profile-content checks still run. `--require-private` fails if the local file is missing. Do not put unrelated private identifiers or credentials in the repository. If the owner later changes the bank decision to EXCLUDE, update the approved public data and add only bank exclusions to that local file before rebuilding.
+## Enquiries and hosting
 
-## Enquiries
+The existing forms prepare email drafts; visitors must send them in their own email service. Copying has a selectable fallback. WhatsApp opens a prefilled message, and Call appears on mobile. No third-party scripts or automatic sending are added.
 
-Email forms prepare drafts; visitors must send them from their email service. Copying has a selectable fallback. WhatsApp opens a prefilled message and Call is shown on mobile. No external scripts, automatic message sending or form backend are added.
+`main` is source; `gh-pages` is deployment. Canonicals, robots, sitemap and metadata use the GitHub Pages address. Custom domain and visitor analytics remain undecided. Praneel can recheck the old cached commit URL on 25 November and contact GitHub Support if superseded master-list history remains accessible.
 
-## Website status – 24 Nov 2026
-
-The public-content rule now includes every final-profile section, including PAN, audit and banking. Earlier statements that those fields were omitted are superseded. The sanitized root history is followed by ordinary maintenance commits. Custom domain and visitor analytics remain undecided.
-
-Praneel can still recheck the old commit URL on 25 November and contact GitHub Support about cached history if needed; this relates to superseded master-list material, not the currently approved profile content. No further history rewrite is part of this update.
-
-This repository and deployment do not replace or modify `web.schoolerp.org/chemotech-international/`.
+The existing `web.schoolerp.org/chemotech-international/` site, unrelated repositories and Google Drive remain untouched.

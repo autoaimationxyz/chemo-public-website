@@ -84,10 +84,60 @@ for cid, _, rng, _, _ in CATEGORIES:
         CAT_BY_NO[n] = cid
 CAT = {c[0]: c for c in CATEGORIES}
 
+# Representative product photos from Wikimedia Commons (credits: assets/img/products/CREDITS.md)
+COMMONS_PHOTOS = {
+    1: ('assets/img/products/01-ht-panels.jpg', 'HT Panels', 'Representative photo · Zen 38 · CC BY-SA 3.0 · Wikimedia Commons'),
+    2: ('assets/img/products/02-lt-pcc-distribution-panels.jpg', 'LT / PCC & Distribution Panels', 'Representative photo · Kgbo · CC BY-SA 4.0 · Wikimedia Commons'),
+    3: ('assets/img/products/03-mcc-motor-control-panels.jpg', 'MCC & Motor Control Panels', 'Representative photo · Wtshymanski · CC BY-SA 3.0 · Wikimedia Commons'),
+    4: ('assets/img/products/04-synchronising-amf-panels.jpg', 'Synchronising & AMF Panels', 'Representative photo · Andy Dingley · CC BY-SA 3.0 · Wikimedia Commons'),
+    5: ('assets/img/products/05-apfc-capacitor-panels.jpg', 'APFC & Capacitor Panels', 'Representative photo · Wikimedia Commons contributor · CC BY-SA 3.0 · Wikimedia Commons'),
+    6: ('assets/img/products/06-feeder-pillars-street-light-panels.jpg', 'Feeder Pillars & Street-Light Panels', 'Representative photo · Андрей Романенко · CC BY-SA 4.0 · Wikimedia Commons'),
+    8: ('assets/img/products/08-compact-unitised-substations.jpg', 'Compact / Unitised Substations', 'Representative photo · AndrewHarvey4 · CC0 · Wikimedia Commons'),
+    11: ('assets/img/products/11-circuit-breakers.jpg', 'Circuit Breakers', 'Representative photo · Balurbala · CC BY-SA 3.0 · Wikimedia Commons'),
+    12: ('assets/img/products/12-earth-leakage-protection.jpg', 'Earth-Leakage Protection', 'Representative photo · Jimbob82 · Public domain · Wikimedia Commons'),
+    13: ('assets/img/products/13-distribution-boards.jpg', 'Distribution Boards', 'Representative photo · Dmitry G · CC BY-SA 3.0 · Wikimedia Commons'),
+    14: ('assets/img/products/14-isolators-changeover-ats.jpg', 'Isolators, Changeover & ATS', 'Representative photo · StcudorPrewoP · CC BY-SA 3.0 · Wikimedia Commons'),
+    15: ('assets/img/products/15-contactors-starters-relays.jpg', 'Contactors, Starters & Relays', 'Representative photo · Kae · CC BY-SA 3.0 · Wikimedia Commons'),
+    16: ('assets/img/products/16-control-indication-metering.jpg', 'Control, Indication & Metering', 'Representative photo · Quist161 · CC BY-SA 4.0 · Wikimedia Commons'),
+    17: ('assets/img/products/17-ht-lt-power-control-cables.jpg', 'HT & LT Power & Control Cables', 'Representative photo · Hannes Grobe · CC BY-SA 3.0 · Wikimedia Commons'),
+    18: ('assets/img/products/18-wires-special-cables.jpg', 'Wires & Special Cables', 'Representative photo · Cjp24 · CC BY-SA 4.0 · Wikimedia Commons'),
+    19: ('assets/img/products/19-cable-accessories-containment.jpg', 'Cable Accessories & Containment', 'Representative photo · Santeri Viinamäki · CC BY-SA 4.0 · Wikimedia Commons'),
+    20: ('assets/img/products/20-wiring-accessories.jpg', 'Wiring Accessories', 'Representative photo · Santeri Viinamäki · CC BY-SA 4.0 · Wikimedia Commons'),
+    21: ('assets/img/products/21-indoor-industrial-led-lighting.jpg', 'Indoor & Industrial LED Lighting', 'Representative photo · Flametechcontrolgear · CC0 · Wikimedia Commons'),
+    22: ('assets/img/products/22-street-area-solar-lighting.jpg', 'Street, Area & Solar Lighting', 'Representative photo · Jacek Halicki · CC BY-SA 4.0 · Wikimedia Commons'),
+    23: ('assets/img/products/23-fans.jpg', 'Fans', 'Representative photo · Muthukumaran Esakkiappan · CC BY-SA 4.0 · Wikimedia Commons'),
+    24: ('assets/img/products/24-earthing-lightning-protection.jpg', 'Earthing & Lightning Protection', 'Representative photo · Wikimedia Commons contributor · CC BY-SA 3.0 · Wikimedia Commons'),
+    25: ('assets/img/products/25-fire-detection-alarm.jpg', 'Fire Detection & Alarm', 'Representative photo · Wikimedia Commons contributor · CC BY-SA 4.0 · Wikimedia Commons'),
+    26: ('assets/img/products/26-public-address-sound-systems.jpg', 'Public Address & Sound Systems', 'Representative photo · Misternomer · CC BY 3.0 · Wikimedia Commons'),
+    30: ('assets/img/products/30-harmonic-filters-pf-correction.jpg', 'Harmonic Filters & PF Correction', 'Representative photo · Holger Urban · CC BY-SA 4.0 · Wikimedia Commons'),
+    31: ('assets/img/products/31-energy-management-system.jpg', 'Energy Management System', 'Representative photo · Rasik Tirodkar · CC BY-SA 4.0 · Wikimedia Commons'),
+    34: ('assets/img/products/34-electrical-motors-actuators.jpg', 'Electrical Motors & Actuators', 'Representative photo · ZngZng · CC BY-SA 3.0 · Wikimedia Commons'),
+    45: ('assets/img/products/45-process-chemicals-lubrication.jpg', 'Process Chemicals & Lubrication', 'Representative photo · LaurelBloch · CC BY-SA 4.0 · Wikimedia Commons'),
+    48: ('assets/img/products/48-lifts.jpg', 'Lifts', 'Representative photo · P1898 · CC BY 4.0 · Wikimedia Commons'),
+    49: ('assets/img/products/49-air-conditioning-ventilation.jpg', 'Air-Conditioning & Ventilation', 'Representative photo · Dinkun Chen · CC BY-SA 4.0 · Wikimedia Commons'),
+    52: ('assets/img/products/52-structured-cabling-networking-lan.jpg', 'Structured Cabling & Networking (LAN)', 'Representative photo · Dsimic · CC BY-SA 4.0 · Wikimedia Commons'),
+    53: ('assets/img/products/53-cctv-security.jpg', 'CCTV & Security', 'Representative photo · MichalPL · CC BY-SA 4.0 · Wikimedia Commons'),
+    54: ('assets/img/products/54-it-communication.jpg', 'IT & Communication', 'Representative photo · -stk · CC BY-SA 4.0 · Wikimedia Commons'),
+    55: ('assets/img/products/55-electrical-installation-contracting.jpg', 'Electrical Installation & Contracting', 'Representative photo · Team Massachusetts 4D Home · CC BY 2.0 · Wikimedia Commons'),
+    56: ('assets/img/products/56-testing-commissioning-o-m-amc.jpg', 'Testing, Commissioning, O&M & AMC', 'Representative photo · MTA Capital Construction Mega Projects · CC BY 2.0 · Wikimedia Commons'),
+}
+
+# Keep the supplied source and licence links available beside representative photos.
+COMMONS_CREDITS = {}
+with open(os.path.join(HERE, "../assets/img/products/CREDITS.md"), encoding="utf-8") as credit_file:
+    for line in credit_file:
+        credit = re.match(r"- \*\*(\d+) .*?\*\*.*?\]\((https://commons\.wikimedia\.org/.*?)\) by (.*?), (.*)$", line)
+        if credit:
+            licence_link = re.search(r"(https://creativecommons\.org/[^\s)]+)", credit[4])
+            COMMONS_CREDITS[int(credit[1])] = {"source": credit[2], "license_url": licence_link[1] if licence_link else ""}
+
 for p in PRODUCTS:
     p["cat"] = CAT_BY_NO[p["no"]]
     imgs = [dict(src=s["img"], title=s["title"], sub=s["sub"], make=s["make"]) for s in SOLUTIONS if p["no"] in s["products"]]
     # Only final-profile solution captions are approved.
+    if not imgs and p["no"] in COMMONS_PHOTOS:
+        src, title, sub = COMMONS_PHOTOS[p["no"]]
+        imgs = [dict(src=src, title=title, sub=sub, make="", **COMMONS_CREDITS.get(p["no"], {}))]
     p["images"] = imgs
     if not SHOW_VARIANT_MAKES:
         for v in p["variants"]:
@@ -182,7 +232,7 @@ def footer():
       <div class="footer-brand">
         <div class="logo-tile"><img src="assets/img/chemotech-logo.png" width="1820" height="300" alt="Chemotech International" loading="lazy"></div>
         <p class="tagline">…a Clean and Conditioning company</p>
-        <p>Electrical Works &amp; Panels · Earthing &amp; Lightning Protection · UPS &amp; DG Sets · VFD, PLC &amp; SCADA Automation · Water &amp; Wastewater Treatment · Solar &amp; EV Charging · Building &amp; ICT Systems</p>
+        <p>Integrated electrical, power, automation, water, process, building and ICT solutions for industry and government projects since 2014–15.</p>
       </div>
       <div>
         <h2>Explore</h2>
@@ -285,8 +335,19 @@ def page_hero(crumb, title, text, tag=None):
 </section>"""
 
 
-def cta(*args, **kwargs):
-    return '<nav class="wrap section-nav" aria-label="Enquiries"><a href="quote.html">Request a quote</a><a href="contact.html">Contact</a></nav>'
+def cta(title="Let’s plan the right solution for your site.", action="Request a quote", target="quote.html", secondary="products.html", secondary_label="Browse products"):
+    return f"""<section class="cta on-navy">
+  <div class="wrap">
+    <div>
+      <h2>{E(title)}</h2>
+      <p>Call <a href="tel:+919899982418">+91 98999 82418</a> or write to <a href="mailto:{INBOX}">{INBOX}</a></p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn--green" href="{target}">{E(action)} {ARROW}</a>
+      <a class="btn btn--line-light" href="{secondary}">{E(secondary_label)}</a>
+    </div>
+  </div>
+</section>"""
 
 
 def industries_list():
@@ -329,26 +390,242 @@ def office_cards():
 def product_specs(p):
     return [("Approved product scope", p["desc"])]
 
+def product_illustration(p):
+    """Conceptual equipment drawings for products without supplied photos."""
+    cat = p["cat"]
+    if cat == "pd":
+        parts = []
+        for i in range(3):
+            x = 160 + i * 92
+            parts.append(f'<rect x="{x}" y="60" width="87" height="225" rx="3" fill="#e3e9e6"/><rect x="{x+9}" y="75" width="69" height="78" rx="2" fill="#f9fcf7"/><circle cx="{x+44}" cy="111" r="20"/><path d="M{x+44} 111l10-12"/><rect x="{x+22}" y="177" width="43" height="59" rx="2"/><path d="M{x+68} 193v24M{x+14} 257h59M{x+14} 264h59"/><circle cx="{x+26}" cy="164" r="3" fill="#85b95e"/><circle cx="{x+44}" cy="164" r="3" fill="#cda674"/>')
+        shapes = ''.join(parts)
+    elif cat == "sw":
+        shapes = '<rect x="205" y="65" width="190" height="218" rx="8" fill="#e3e9e6"/><rect x="220" y="95" width="160" height="82" rx="3" fill="#fafbf8"/><rect x="274" y="123" width="52" height="72" rx="4" fill="#52677a"/><path d="M239 45v45M300 45v45M361 45v45M239 260v42M300 260v42M361 260v42" stroke-width="10"/><path d="M230 220h140M230 232h140M230 244h140"/>'
+    elif cat == "cl":
+        shapes = '<ellipse cx="300" cy="187" rx="116" ry="90" fill="#e3e9e6"/><ellipse cx="300" cy="187" rx="94" ry="72"/><ellipse cx="300" cy="187" rx="70" ry="54"/><ellipse cx="300" cy="187" rx="46" ry="36"/><ellipse cx="300" cy="187" rx="22" ry="17" fill="#fafbf8"/><path d="M416 187h60v-78M184 187h-56v65" stroke-width="7"/>'
+    elif cat == "pb":
+        shapes = '<rect x="217" y="49" width="166" height="246" rx="8" fill="#e3e9e6"/><rect x="239" y="73" width="122" height="51" rx="3" fill="#52677a"/><path d="M251 101h18l9-13 15 27 14-22 9 8h32" stroke="#c2e581"/><path d="M241 164h118M241 178h118M241 192h118M241 206h118M241 220h118M241 234h118M241 248h118"/><circle cx="344" cy="275" r="4" fill="#85b95e"/>'
+    elif cat == "au":
+        shapes = '<path d="M127 250h347" stroke-width="8"/><rect x="138" y="116" width="102" height="128" rx="4" fill="#e3e9e6"/><rect x="151" y="134" width="75" height="48" fill="#52677a"/><path d="M162 148h23M162 158h42" stroke="#c2e581"/>' + ''.join(f'<rect x="{x}" y="134" width="40" height="110" rx="3" fill="#e3e9e6"/><path d="M{x+10} 149h20M{x+10} 161h20M{x+10} 173h20M{x+10} 215h20M{x+10} 227h20"/>' for x in [250,298,346,394])
+    elif cat == "wp":
+        shapes = '<path d="M145 277h316M168 277V100h263v177M208 80V58h182v22"/>' + ''.join(f'<rect x="{x}" y="80" width="68" height="187" rx="30" fill="#e3e9e6"/><path d="M{x+34} 80V58M{x+34} 267v20M{x+12} 152h44"/>' for x in [190,278,366])
+    elif cat == "bi":
+        shapes = '<rect x="172" y="73" width="256" height="215" rx="3" fill="#e3e9e6"/><path d="M155 288h290M204 73V53h192v20M280 288v-55h40v55"/>' + ''.join(f'<rect x="{x}" y="{y}" width="35" height="35" rx="2" fill="#fafbf8"/>' for x in [196,254,312,370] for y in [100,161])
+    else:
+        shapes = '<circle cx="300" cy="177" r="105" fill="#e3e9e6"/><path d="M334 91a61 61 0 0 0-78 78l-68 68 32 32 68-68a61 61 0 0 0 78-78l-35 35-32-32z" fill="#fafbf8"/><circle cx="219" cy="237" r="9"/>'
+    return f'<svg class="equipment-illustration" viewBox="0 0 600 340" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><ellipse cx="300" cy="302" rx="158" ry="8" fill="currentColor" opacity=".07" stroke="none"/>{shapes}</svg>'
 
 
+def featured_products(numbers=(27, 35, 39, 33)):
+    cards = []
+    for no, label in [(27, "Power without interruption"), (35, "Control with precision"), (39, "Water that works harder"), (33, "Moving energy forward")]:
+        if no not in numbers:
+            continue
+        p = next(p for p in PRODUCTS if p["no"] == no)
+        im = p["images"][0]
+        cards.append(f'''<a class="feature-card" href="products.html#p-{no}"><div class="feature-card__image"><img src="{im['src']}" alt="{E(im['title'])}" loading="lazy" width="640" height="480"><span>{E(CAT[p['cat']][1])}</span></div><div class="feature-card__copy"><small>{E(label)}</small><h3>{E(p['name'])}</h3><p>{E(p['desc'])}</p><span class="text-link">Explore product scope {ARROW}</span></div></a>''')
+    return "".join(cards)
 
 
+def system_graphic():
+    return Path(HERE, "system-graphic.html").read_text(encoding="utf-8")
 
 
+def ecosystem_band():
+    names = ["Delta", "Eaton", "Kirloskar", "Paikane", "Krykard", "SBEM", "Toshcon Instruments", "KEC International"]
+    brands = ''.join(f'<span>{E(n)}</span>' for n in names if n in PARTNERS)
+    return f'<section class="ecosystem-band" aria-label="Selected OEM partners"><div class="wrap"><p>OEM technology.<br><b>Local accountability.</b></p><div class="ecosystem-makes">{brands}</div><a href="solutions.html#partners" aria-label="See all OEM partners">{ARROW_UP_RIGHT}</a></div></section>'
 
 
+def solution_gateways():
+    groups = [("pd", "01", "Power that keeps you moving.", "From HT distribution to backup generation. Connect reliable equipment with complete electrical execution.", "silent-dg-set"), ("au", "02", "Intelligence in every process.", "Drives, controls and instrumentation that bring your machines, people and plant together.", "scada-system"), ("wp", "03", "A better flow of resources.", "Water treatment, wastewater, steam and process utilities. Designed around your operating conditions.", "wtp-on-site"), ("bi", "04", "Infrastructure for what’s next.", "Building systems, clean rooms, ICT and security. Connected spaces built for real working environments.", "cold-clean-rooms")]
+    return ''.join(f'''<a class="solution-gateway" href="#cat-{cid}" data-gateway="{cid}"><img src="{sol(slug)['img']}" alt="{E(sol(slug)['title'])}" loading="lazy"><div><span>{num} / {E(CAT[cid][1])}</span><h3>{E(title)}</h3><p>{E(desc)}</p><b>Explore the capability {ARROW_UP_RIGHT}</b></div></a>''' for cid, num, title, desc, slug in groups)
 
 
+def home():
+    facts = [("2014–15", "Established"), ("3", "Countries: India · Nepal · Bhutan"), ("20+", "Industry sectors served"),
+             (str(N_PRODUCTS), "Product families"), ("300+", "Variants &amp; types"), ("40+", "OEM partners")]
+    facts_html = "".join(f"<li><b>{a}</b><span>{b}</span></li>" for a, b in facts)
+
+    capabilities = [
+        ("electrical", "Power & energy", "pd", "Electrical distribution, backup power, renewables and power quality, connected around your site."),
+        ("automation", "Automation & control", "au", "Drives, instrumentation and PLC / HMI / SCADA integration for smarter plant operations."),
+        ("water", "Water & process", "wp", "Water treatment, process utilities, chemicals and hygiene systems, from selection to service."),
+        ("building", "Buildings & infrastructure", "bi", "Building systems, clean rooms, ICT and security for connected working environments."),
+    ]
+    vpanels = "".join(f'''<a class="vpanel" href="solutions.html#{cat}">{icon(ic)}<h3>{E(name)}</h3><p>{E(text)}</p><span class="text-link">Explore solutions {ARROW}</span></a>''' for ic, name, cat, text in capabilities)
+
+    body = f"""
+<section class="hero on-navy">
+  <div class="wrap">
+    <div class="hero__copy">
+      <span class="tag">Integrated engineering · Since 2014–15</span>
+      <h1>Complex systems.<br>One <em>clear vision.</em></h1>
+      <p>We connect power, automation, water and infrastructure. From engineering and integration to commissioning and long-term support, your entire project moves with one team.</p>
+      <div class="btn-row">
+        <a class="btn btn--green" href="solutions.html">Discover our solutions {ARROW}</a>
+        <a class="btn btn--line-light" href="contact.html">Talk to our team {ARROW_UP_RIGHT}</a>
+      </div>
+    </div>
+    {system_graphic()}
+  </div>
+</section>
+
+{ecosystem_band()}
+<section class="facts" aria-label="At a glance">
+  <div class="wrap"><ul>{facts_html}</ul></div>
+</section>
+
+<section class="section home-capabilities">
+  <div class="wrap">
+    <div class="section-head section-head--split">
+      <div class="stack" style="gap:14px">
+        <span class="tag">What we do</span>
+        <h2>Connected expertise.<br>One accountable team.</h2>
+        <p>Engineering, supply, installation and support across the systems your facility depends on.</p>
+      </div>
+      <a class="text-link" href="solutions.html">Explore all capabilities {ARROW}</a>
+    </div>
+    <div class="verticals verticals--4">{vpanels}</div>
+  </div>
+</section>
+
+<section class="section section--wash featured-section">
+  <div class="wrap">
+    <div class="section-head section-head--split">
+      <div class="stack" style="gap:14px"><span class="tag">Selected systems</span><h2>Solutions in focus.</h2><p>A starting point for your next project. Explore our full portfolio for our product families and main makes.</p></div>
+      <a class="text-link" href="products.html">Explore {N_PRODUCTS} product families {ARROW}</a>
+    </div>
+    <div class="featured-grid home-featured-grid">{featured_products((27, 39))}</div>
+  </div>
+</section>
+
+<section class="section home-delivery">
+  <div class="wrap delivery-layout">
+    <figure class="delivery-visual"><img src="assets/img/solutions/wtp-on-site.jpg" alt="Process installation with treatment vessels, piping and electrical controls" loading="lazy" width="1000" height="750"><figcaption><span>CONNECTED EXECUTION</span><b>From individual systems<br>to a coordinated facility.</b></figcaption></figure>
+    <div class="delivery-copy">
+      <span class="tag">How your project takes shape</span>
+      <h2>Clarity at every stage.<br>Continuity beyond handover.</h2>
+      <p>We coordinate equipment, controls and utilities around your site requirements, with an agreed scope from the first discussion through ongoing service.</p>
+      <ol class="delivery-steps">
+        <li><span class="list-number" aria-hidden="true">01</span><div><h3>Understand &amp; engineer</h3><p>Study operating conditions, align specifications and select equipment that fits the process.</p></div></li>
+        <li><span class="list-number" aria-hidden="true">02</span><div><h3>Supply &amp; integrate</h3><p>Coordinate sourcing and installation across electrical, automation and process requirements.</p></div></li>
+        <li><span class="list-number" aria-hidden="true">03</span><div><h3>Commission &amp; support</h3><p>Test the installation, support handover and plan maintenance around the agreed service scope.</p></div></li>
+      </ol>
+      <a class="text-link" href="solutions.html#delivery">Discover our approach {ARROW}</a>
+    </div>
+  </div>
+</section>
+
+<nav class="home-explore" aria-label="Explore Chemotech">
+  <div class="wrap">
+    <a href="about.html"><span>Our people &amp; approach</span><b>Meet Chemotech {ARROW_UP_RIGHT}</b></a>
+    <a href="projects.html#clients"><span>Clients &amp; project references</span><b>Explore our experience {ARROW_UP_RIGHT}</b></a>
+    <a href="certifications.html"><span>Licences &amp; registrations</span><b>View our credentials {ARROW_UP_RIGHT}</b></a>
+  </div>
+</nav>
+{cta()}"""
+    page("index.html", "Home",
+         "Chemotech International: electrical works, DG sets, UPS, VFD / PLC / SCADA automation, water and wastewater treatment, solar, EV charging, building and ICT systems for industry across India, Nepal and Bhutan.",
+         body)
 
 
 # --------------------------------------------------------------------------
 # ABOUT
 # --------------------------------------------------------------------------
+def about():
+    values = [('Passion', "We are always curious & accountable towards customers' needs."), ('Teamwork', 'Strong interdisciplinary & interdepartmental cooperation.'), ('Efficiency', 'Efficient & effective services to our customers at an affordable cost.'), ('Innovation', 'Supporting trade enquiries, questioning products & underlying assumptions.'), ('Profitability', 'Instilling customer loyalty for sustainable profit growth.'), ('Integrity', 'We build business success and quality services on our commitment to ethical conduct.')]
+    key_people = [
+        ("34+", "Raman Kumar Jha", "", "Operations &amp; Project Handling",
+         E(COMPANY["approved_content"]["team_bios"][0])),
+        ("29+", "Tapan Kumar Jha", "Partner", "Sales &amp; Marketing",
+         E(COMPANY["approved_content"]["team_bios"][1])),
+        ("19+", "Shailendra Kumar Jha", "Partner", "Sales &amp; Marketing",
+         E(COMPANY["approved_content"]["team_bios"][2])),
+        ("8+", "Mukund Jha", "", "Marketing &amp; Project Handling",
+         E(COMPANY["approved_content"]["team_bios"][3])),
+    ]
+    people_html = "".join(f"""<article class="person">
+        <div class="person__yrs"><b>{y}</b><span>years</span></div>
+        <div><h3>{n}{f' <small>{p}</small>' if p else ''}</h3><p class="role">{r}</p><p>{d}</p></div>
+      </article>""" for y, n, p, r, d in key_people)
+    crew = [("21", "Murari Prashad", "Graduate", "Sales &amp; Marketing"),
+            ("8", "Ajitanshu Anand", "B.Tech – Electrical &amp; Electronics", "Design, Programming, Sales &amp; Support"),
+            ("8", "Manish Kumar", "Graduate", "Sales &amp; Services"),
+            ("5", "Gunjan Kumar Mandal", "B.Tech – Electrical Engineering", "Service &amp; Support")]
+    crew_html = "".join(f'<li><b class="yrs">{y}<small> yrs</small></b><h3>{n}</h3><span>{q}</span><span class="role">{r}</span></li>' for y, n, q, r in crew)
+    body = f"""
+{page_hero("About Us", "People with decades of plant experience", "We understand how production works, what quality means on the shop floor, and how to present a solution that fits. That is how we have earned the trust of organisations of repute.", "About Chemotech")}
+
+<section class="section" id="approach">
+  <div class="wrap split">
+    <div class="stack" style="gap:18px">
+      <span class="tag">Who we are</span>
+      <h2 style="font-size:var(--fs-2xl)">Focused, versatile and built around the client</h2>
+      <p class="lead">{E(COMPANY["approved_content"]["about_paragraphs"][1])}</p>
+    </div>
+    <div class="prose">
+      {"".join("<p>"+E(COMPANY["approved_content"]["about_paragraphs"][i])+"</p>" for i in [0,2,3,4])}
+    </div>
+  </div>
+</section>
+<section class="section section--wash" id="vision"><div class="wrap">
+  <div class="section-head"><span class="tag">Our commitments</span><h2>Practical engineering. Lasting relationships.</h2><p>We listen to operating needs, recommend suitable equipment and remain accountable through the agreed scope of work.</p></div>
+  <div class="prose"><h3>Our vision</h3><p>Uniquely serving customers with a clear understanding of their activity – which fuels our passion to provide innovative power solutions.</p><h3>Our mission</h3><p>{E(COMPANY["approved_content"]["mission_intro"])}</p><ul>{"".join("<li>"+E(item)+"</li>" for item in COMPANY["approved_content"]["mission_commitments"])}</ul><h3>Quality policy</h3><p>At CHEMOTECH, Quality means consistently exceeding the needs of our customers – not just in terms of service quality, but in all aspects of our business.</p><ul><li>Understand the needs of our customers.</li><li>Practise continuous improvement in our systems and Quality Management System.</li><li>Render the best of our services to our customers.</li></ul><p>It is the responsibility of everyone in the company to strive for the highest level of excellence and performance in everything we do.</p><p>Partner</p></div>
+  <p>Our values are our voice. We are committed to competitive excellence through:</p>
+  <ul class="values">{"".join(f"<li><b>{a}</b><span>{b}</span></li>" for a, b in values)}</ul>
+</div></section>
+
+<section class="section section--wash" id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Key persons in the Chemotech team</span>
+      <h2>Our team</h2>
+      <p>Engineers and commercial leads with experience across electro-mechanical equipment, water treatment, steam distribution and industrial sales.</p>
+    </div>
+    <div class="team">{people_html}</div>
+    <h3 class="tag mt-lg" style="margin-bottom:16px">Sales, design &amp; service team</h3>
+    <ul class="crew">{crew_html}</ul>
+  </div>
+</section>
+
+<section class="section" id="company-details"><div class="wrap split"><div class="stack"><span class="tag">Company information</span><h2>Established in 2014–15. Based in Patna and Delhi.</h2><p>A partnership firm serving industrial, institutional and government projects across India, Nepal and Bhutan.</p><a class="text-link" href="certifications.html">Licences &amp; registrations {ARROW}</a></div><dl class="company-facts"><dt>Legal name</dt><dd>Chemotech International</dd><dt>Company type</dt><dd>Partnership</dd><dt>Partners</dt><dd>Tapan Kumar Jha · Shailendra Kumar Jha</dd><dt>PAN No.</dt><dd>{E(COMPANY["pan"]["number"])} ({E(COMPANY["pan"]["note"])})</dd></dl></div></section>
+<section class="section" id="banking-audit"><div class="wrap split"><div class="stack"><span class="tag">Company information</span><h2>Banking &amp; Audit</h2></div><dl class="company-facts">{"".join('<dt>Bank</dt><dd>'+E(bank['name'])+'</dd><dt>A/c No.</dt><dd class="mono">'+E(bank['account'])+'</dd><dt>IFSC</dt><dd class="mono">'+E(bank['ifsc'])+'</dd>' for bank in COMPANY['banking_audit']['banks'])}<dt>Auditor</dt><dd>{E(COMPANY['banking_audit']['auditor'])}</dd></dl></div></section>
+{cta("Meet the team behind your next project.", "Talk to our team", "contact.html")}"""
+    page("about.html", "About Us",
+         "About Chemotech International: our story, values, company information and the team behind our electrical, automation, water and building projects.",
+         body)
 
 
 # --------------------------------------------------------------------------
 # PRODUCTS (interactive catalogue)
 # --------------------------------------------------------------------------
+def solutions():
+    groups = [
+        ("pd", "Power & energy", "electrical", ["pd", "sw", "cl", "pb"], "Coordinate distribution, backup power and power quality around the loads your facility depends on.", "Panels and transformers; DG sets and UPS; solar, EV charging and energy management.", ["Define loads, ratings and backup requirements", "Select compatible equipment and protection", "Plan installation, testing and service"]),
+        ("au", "Automation & control", "automation", ["au"], "Connect field instruments, drives and control systems for the operating needs of your plant.", "Motors and VFDs; PLC, HMI and SCADA; flow, level, pressure and water-quality instrumentation.", ["Review the process and control requirements", "Coordinate instruments, panels and programming", "Support commissioning and troubleshooting"]),
+        ("wp", "Water & process", "water", ["wp"], "Bring treatment equipment, utilities and process support together around the required application and capacity.", "WTP, RO, DM and UF systems; ETP and STP; steam distribution, piping, chemicals and hygiene.", ["Discuss water quality, capacity and site conditions", "Select treatment stages and supporting utilities", "Agree commissioning, maintenance and O&M scope"]),
+        ("bi", "Buildings & infrastructure", "building", ["bi"], "Coordinate the systems that support safe, connected and practical working environments.", "Building management, HVAC, lifts, clean rooms and pre-fab structures; networking, CCTV and IT.", ["Review occupancy, services and infrastructure needs", "Select building systems and connected equipment", "Coordinate installation and ongoing support"]),
+    ]
+    sections = []
+    for cid, title, ic, cats, description, equipment, steps in groups:
+        photos = [photo for photo in SOLUTIONS if photo["products"] and CAT_BY_NO.get(photo["products"][0]) in cats]
+        def photo_card(photo):
+            return f'<a class="application-photo" href="products.html#p-{photo["products"][0]}"><img src="{E(photo["img"])}" alt="{E(photo["title"])}" loading="lazy" width="1000" height="750"><span><b>{E(photo["title"])}</b><small>{E(photo["make"]) if photo["make"] else "Application context"} · View related equipment</small></span></a>'
+        gallery = ''.join(photo_card(photo) for photo in photos[:2])
+        more = '<details class="photo-details"><summary>More equipment &amp; application images</summary><div class="application-gallery">' + ''.join(photo_card(photo) for photo in photos[2:]) + '</div></details>' if len(photos)>2 else ''
+        links = ''.join(f'<a class="text-link" href="products.html#cat-{cat}">{E(CAT[cat][1])} {ARROW}</a>' for cat in cats)
+        sections.append(f'<section class="section solution-section" id="{cid}"><div class="wrap"><div class="solution-layout"><div class="stack">{icon(ic)}<h2>{E(title)}</h2><p class="lead">{E(description)}</p><p>{E(equipment)}</p><ul class="checklist">'+''.join(f'<li><span class="list-copy">{E(step)}</span></li>' for step in steps)+f'</ul><div class="solution-equipment-links">{links}</div></div><div><div class="application-gallery">{gallery}</div>{more}</div></div></div></section>')
+    services = ''.join(f'<li>{icon("service")}<span>{E(service)}</span></li>' for service in SERVICES)
+    partners = ''.join(f'<li>{E(name)}</li>' for name in PARTNERS)
+    body = f"""
+{page_hero("Solutions & Services", "Engineering around the way your site works.", "Explore four connected disciplines, with equipment selection, installation, commissioning and support matched to your agreed scope.", "Solutions & services")}
+<nav class="section-nav wrap" aria-label="Solution disciplines"><a href="#pd">Power &amp; energy</a><a href="#au">Automation</a><a href="#wp">Water &amp; process</a><a href="#bi">Buildings</a><a href="#delivery">Delivery &amp; service</a></nav>
+{"".join(sections)}
+<section class="section section--wash" id="delivery"><div class="wrap"><div class="section-head"><span class="tag">From requirement to service</span><h2>One coordinated delivery process.</h2><p>We agree the responsibilities and deliverables for your project before execution.</p></div><ol class="chain">{"".join(f'<li><div class="chain-head"><small>Step {i}</small>{icon(ic)}</div><b>{E(label)}</b></li>' for i,(ic,label) in enumerate([("automation","Requirement & design"),("electrical","Sourcing & supply"),("service","Installation"),("switch","Testing & commissioning"),("service","Service & AMC")],1))}</ol><details class="oem-details"><summary>How we work &amp; execution approach</summary><div class="prose"><h3>How We Work</h3>{"".join('<h4>'+E(title)+'</h4><p>'+E(text)+'</p>' for title,text in COMPANY['approved_content']['how_we_work'])}<p>Quality-conscious approach</p><p>Safety, Health &amp; Environment conscious</p><h3>Our Execution Approach</h3><p>Engineering, supply, system integration, installation, commissioning, maintenance and after-sales support.</p><ol>{"".join('<li>'+E(text)+'</li>' for text in COMPANY['approved_content']['execution_steps'])}</ol><h3>Why Work With Us</h3><ul>{"".join('<li>'+E(text)+'</li>' for text in COMPANY['approved_content']['why_work_with_us'])}</ul></div></details><h3 class="service-heading">Choose the support your project needs</h3><ul class="service-options">{services}</ul><p class="note">Supply-only, installation, turnkey and service scopes are available by agreement. <a href="certifications.html">View our licences and registrations.</a></p></div></section>
+<section class="section" id="partners"><div class="wrap"><div class="section-head"><span class="tag">Equipment sourcing</span><h2>Established makes. Application-led selection.</h2><p>We work with 40+ OEM partners across our portfolio. Final makes, ratings and model availability are confirmed against your requirements.</p></div><details class="oem-details"><summary>View the full OEM list</summary><ul class="names names--partners">{partners}</ul><p class="more-band">+ 80 more makes <span>across the disciplines we serve</span></p></details></div></section>
+{cta("Let’s define the right scope together.", "Discuss your requirements", "contact.html")}"""
+    page("solutions.html", "Solutions & Services", "Power, automation, water, process and building engineering: equipment selection, supply, installation, commissioning and maintenance from Chemotech International.", body)
 
 
 def products():
@@ -370,7 +647,7 @@ def products():
             badge = f'<span class="count-badge">{len(p["images"])} photos</span>' if len(p["images"]) > 1 else ""
             media = f'<img src="{im["src"]}" alt="" loading="lazy" width="640" height="480">{badge}'
         else:
-            media = f'<div class="equipment-tile"><span class="equipment-no">{p["no"]:02d} / {E(c[1])}</span><span>{E(p["name"])}</span></div>'
+            media = f'<div class="equipment-tile"><span class="equipment-no">{p["no"]:02d} / {E(c[1])}</span>{product_illustration(p)}<span class="illustration-caption">Configuration illustration</span></div>'
         cards.append(f"""<article class="pcard c-{p['cat']}" data-no="{p['no']}" id="product-{p['no']}">
         <button class="pcard__open" type="button" aria-haspopup="dialog">
           <div class="pcard__media">{media}</div>
@@ -387,15 +664,15 @@ def products():
 
     data = {
         "redirects": {"10": 9},
-        "categories": [{"id": c[0], "name": c[1], "blurb": c[1], "icon": icon(c[3], "")} for c in CATEGORIES],
+        "categories": [{"id": c[0], "name": c[1], "blurb": c[4], "icon": icon(c[3], "")} for c in CATEGORIES],
         "products": [{"no": p["no"], "catalogue_no": p["catalogue_no"], "name": p["name"], "cat": p["cat"], "desc": p["desc"], "note": p["note"],
-                      "main": p["main_makes"], "variants": p["variants"], "images": p["images"], "specs": product_specs(p), "application": p["desc"], "illustration": ""} for p in PRODUCTS],
+                      "main": p["main_makes"], "variants": p["variants"], "images": p["images"], "specs": product_specs(p), "application": p["desc"], "illustration": product_illustration(p) if not p["images"] else ""} for p in PRODUCTS],
 
     }
     data_json = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
     body = f"""
-<section class="catalogue-hero"><div class="wrap"><div class="crumbs"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Products</span></div><h1>Our Product Range</h1><p>{N_PRODUCTS} product families · 300+ variants. Search by equipment, specification or make.</p><a class="text-link" href="solutions.html">Need help defining the system? Explore solutions {ARROW}</a></div></section>
+<section class="catalogue-hero"><div class="wrap"><div class="crumbs"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Products</span></div><h1>Find the equipment for your project.</h1><p>{N_PRODUCTS} product families · 300+ variants. Search by equipment, specification or make.</p><a class="text-link" href="solutions.html">Need help defining the system? Explore solutions {ARROW}</a></div></section>
 <div class="cat-toolbar" role="search" aria-label="Filter products">
   <div class="wrap">
     <div class="cat-row">
@@ -421,7 +698,7 @@ def products():
       <button class="link-btn" type="button" data-reset>Reset filters</button>
       <p id="cat-title-note">Select a product to see its scope and main makes. Detailed options are available on request.</p>
     </div>
-    <p class="catalogue-guidance">Main makes shown are indicative; the complete product &amp; make list is available on request.</p>
+    <p class="catalogue-guidance">Explore specifications and types in each product. Photos illustrate product families; final makes, ratings and model availability are confirmed against your project requirements.</p>
     <div class="pgrid" id="product-grid">{"".join(cards)}</div>
     <div class="catalogue-more"><button class="btn btn--ghost" id="show-more" type="button" aria-controls="product-grid" hidden>Show more products</button><p id="catalogue-progress" aria-live="polite"></p></div>
     <div class="empty-state" id="cat-empty" hidden>
@@ -451,6 +728,44 @@ def products():
 # --------------------------------------------------------------------------
 # COMPANY PROFILE
 # --------------------------------------------------------------------------
+def projects():
+    clients = "".join(f"<li>{E(c)}</li>" for c in CLIENTS)
+    project_cards = "".join('<article class="ref"><h3>' + E(title) + '</h3><ul>' + ''.join('<li><span><b>' + E(name) + '</b><small>' + E(location) + '</small></span>' + ('<span class="cap">' + E(capacity) + '</span>' if capacity else '') + '</li>' for name, location, capacity in entries) + '</ul></article>' for title, entries in COMPANY["projects"].items())
+
+    body = f"""
+{page_hero("Projects & Clients", "Experience across plants, utilities and infrastructure.", "Explore documented project references by application, location and capacity, alongside the organisations we serve.", "Projects & clients")}
+<nav class="section-nav wrap" aria-label="Project sections"><a href="#references">Project references</a><a href="#clients">Clients</a><a href="#presence">Industries served</a></nav>
+<section class="section" id="references"><div class="wrap"><div class="section-head"><span class="tag">Selected experience</span><h2>Project references by application</h2><p>Locations and capacities follow our company profile. Each reference describes the recorded application; detailed scope can be discussed with our team.</p></div><div class="refs">{project_cards}</div></div></section>
+<section class="section" id="clients">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Our clients</span>
+      <h2>Organisations we serve</h2>
+      <p>Government bodies, PSUs, industries, institutions, hospitals and infrastructure projects across India, Nepal and Bhutan.</p>
+    </div>
+    <ul class="names">{clients}</ul>
+
+  </div>
+</section>
+
+<section class="section section--wash" id="presence">
+  <div class="wrap">
+    <div class="section-head section-head--split">
+      <div class="stack" style="gap:14px">
+        <span class="tag">Our presence</span>
+        <h2>Serving 20+ industry sectors</h2>
+        <div class="presence"><span>India</span><span>Nepal</span><span>Bhutan</span></div>
+      </div>
+    </div>
+    <ul class="industries">{industries_list()}</ul>
+  </div>
+</section>
+
+{cta("Planning a similar application?", "Discuss your project", "contact.html")}"""
+    page("projects.html", "Projects & Clients", "Chemotech project references, clients, locations, capacities and industries served across India, Nepal and Bhutan.", body)
+    legacy = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=projects.html"><title>Company information · Chemotech International</title><script>var h=location.hash;location.replace((h==="#partners"?"solutions.html#partners":h==="#company-details"?"about.html#company-details":"projects.html"+h));</script></head><body><p>Continue to <a href="projects.html">Projects &amp; Clients</a> or <a href="about.html#company-details">company information</a>.</p></body></html>'
+    legacy = legacy.replace("</head>", contact_stylesheet() + "</head>").replace("</body>", contact_actions() + "</body>")
+    Path(OUT, "company-profile.html").write_text(legacy, encoding="utf-8", newline="\n")
 
 
 # --------------------------------------------------------------------------
@@ -458,13 +773,13 @@ def products():
 # --------------------------------------------------------------------------
 def certifications():
     body = f"""
-{page_hero("Licences & Registrations", "Licences &amp; Registrations", "Electrical Contractor Licences – Bihar &amp; Delhi · Building Construction Department, Govt. of Bihar · Haryana Engineering Works Portal, Govt. of Haryana", "Licences &amp; registrations")}
+{page_hero("Licences & Registrations", "Licensed and registered to execute", "Electrical contractor licences in Bihar and Delhi, BCD Bihar Class 3 and Haryana Engineering Works Portal registration, with valid GST registrations in both states.", "Licences &amp; registrations")}
 
 <section class="section">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">Electrical contractor licences</span>
-      <h2>Electrical Contractor Licences</h2>
+      <h2>Licences to execute electrical works</h2>
     </div>
     <div class="lic-cards">
       <article class="lic">
@@ -494,7 +809,7 @@ def certifications():
   <div class="wrap">
     <div class="section-head" style="margin-bottom:24px">
       <span class="tag">Contractor registrations</span>
-      <h2>Contractor Registration</h2>
+      <h2>Works contractor registrations</h2>
     </div>
     <div class="stack" style="gap:12px">
       <div class="reg-banner" style="background:var(--paper)">
@@ -513,7 +828,7 @@ def certifications():
   <div class="wrap">
     <div class="section-head">
       <span class="tag">Tax &amp; business registrations</span>
-      <h2>Tax &amp; Business Registrations</h2>
+      <h2>Registration details</h2>
     </div>
     <div class="table-wrap" tabindex="0" role="region" aria-label="Registration details table">
       <table class="data">
@@ -521,13 +836,13 @@ def certifications():
         <tbody>
           <tr><th scope="row">GST – Bihar</th><td class="mono">10AATFC8340G1ZJ</td><td>21/06/2024</td></tr>
           <tr><th scope="row">GST – Delhi</th><td class="mono">07AATFC8340G1Z6</td><td>01/06/2024</td></tr>
-          <tr><th scope="row">PAN</th><td class="mono">{E(COMPANY['pan']['number'])}</td><td>{E(COMPANY['pan']['registered_on'])}</td></tr>
+          <tr><th scope="row">PAN</th><td class="mono">{E(COMPANY["pan"]["number"])}</td><td>{E(COMPANY["pan"]["registered_on"])}</td></tr>
           <tr><th scope="row">Udyam (MSME) – Micro</th><td class="mono">UDYAM-BR-26-0136033</td><td>10/07/2024</td></tr>
           <tr><th scope="row">Firm Registration – Bihar</th><td class="mono">F2600000083<small>Register No. F000233/2026 · Indian Partnership Act, 1932</small></td><td>21/04/2026</td></tr>
         </tbody>
       </table>
     </div>
-
+    <div class="note mt-md">Need copies of any licence or registration for vendor onboarding? <a href="contact.html">Contact us</a> and we will send them.</div>
   </div>
 </section>
 {cta("Check the credentials for your scope.", "Discuss your requirements", "contact.html")}"""
@@ -712,64 +1027,6 @@ def quote():
          "Request a quotation from Chemotech International for panels, transformers, DG sets, UPS, VFD, PLC, SCADA, water treatment plants, hygiene stations, pre-fab structures, networking and CCTV.",
          body)
 
-
-
-def profile_section(number, title, anchor):
-    text=COMPANY["profile_pages"][str(number)]
-    headings={'COMPANY DETAI LS','OF F ICES & GST REGISTRATIONS','BANKING & AUDIT','Head Office – Bihar','Delhi Office','Our Vision','Our Mission','We Value','TEAM','DESIGN','EXECUTION','Why Work With Us','Key Clients','Power & LED Display Projects','Automation, SCADA & WTP Instrumentation','Industrial Clients – VFD, PLC & Automation','Power & Electrical','Water & Wastewater','Automation & Instrumentation','Building, Energy & ICT'}
-    replacements={'COMPANY DETAI LS':'COMPANY DETAILS','OF F ICES & GST REGISTRATIONS':'OFFICES & GST REGISTRATIONS','WE WI L L':'WE WILL','SAL ES, DESIGN & SERVICE TEAM':'SALES, DESIGN & SERVICE TEAM','END-TO-END, HANDL ED SEAML ESSLY':'END-TO-END, HANDLED SEAMLESSLY'}
-    headings.update(replacements.values())
-    eyebrows={'EST. 2014-15 · PATNA, BIHAR · INDIA · NEPAL · BHUTAN','WHAT WE DO','OEM PARTNERS INCLUDE','INSIDE THIS PROFILE','AT A GLANCE','VISION FOR CHEMOTECH INTERNATIONAL','KEY PERSONS IN THE CHEMOTECH TEAM','INDIA · NEPAL · BHUTAN'}
-    index_targets=['about.html#company-details','about.html#quality','about.html#vision','about.html#approach','about.html#team','about.html#how-we-work','projects.html#presence','products.html#catalogue','solutions.html#pd','solutions.html#partners','projects.html#clients']
-    chunks=[];pending=[];in_index=False
-    def flush():
-        if pending: chunks.append('<p>'+' '.join(pending)+'</p>');pending.clear()
-    for line in text.splitlines():
-        label=replacements.get(line,line)
-        item=re.match(r'^(0[1-9]|1[01]) (.+)$',line) if number==2 else None
-        if item:
-            flush()
-            if not in_index: chunks.append('<nav aria-label="Inside this profile"><ol class="profile-index">');in_index=True
-            chunks.append(f'<li><a href="{index_targets[int(item[1])-1]}"><span class="profile-index__number">{item[1]}</span><span>{E(item[2])}</span></a></li>')
-            continue
-        if in_index: chunks.append('</ol></nav>');in_index=False
-        formatted=('<span class="profile-letterspaced">'+E(label)+'</span>') if label in eyebrows or re.match(r'^(SECTION \d{2}|\d{2} · )',label) else E(label)
-        if line in headings or line in replacements:
-            flush();chunks.append('<h3>'+E(label)+'</h3>')
-        elif re.match(r'^(Name of the|Type of Company|Partners |Year of|PAN No\.|Phone |Email |HDFC Bank|A/c No\.|IFSC |Auditor |34\+|29\+|19\+|8\+|21 yrs|8 yrs|5 yrs|Since 2014|Ours is|We are passionate|CHEMOTECH is tough)',line):
-            flush();pending.append(formatted)
-        elif number==1:
-            flush();chunks.append('<p>'+formatted+'</p>')
-        else: pending.append(formatted)
-    if in_index: chunks.append('</ol></nav>')
-    flush()
-    return f'<section class="section" id="{anchor}"><div class="wrap"><h2>{E(title)}</h2><div class="profile-transcript">{"".join(chunks)}</div></div></section>'
-
-def profile_page(filename, title, sections):
-    body=f'<section class="page-hero"><div class="wrap"><h1>{E(title)}</h1></div></section>'
-    body+=''.join(profile_section(*section) for section in sections)
-    page(filename,title,title+' · Chemotech International',body)
-
-def home():
-    profile_page('index.html','Chemotech International',[(1,'Company Profile','what-we-do'),(2,'Index · At a Glance','at-a-glance')])
-
-def about():
-    profile_page('about.html','About Chemotech',[(3,'Key Information','company-details'),(5,'Quality Policy','quality'),(6,'Vision, Mission & Values','vision'),(7,'About Chemotech','approach'),(8,'Our Team','team'),(9,'How We Work','how-we-work'),(10,'Our Execution Approach','execution')])
-
-def solutions():
-    body='<section class="page-hero"><div class="wrap"><h1>Our Solutions</h1></div></section>'
-    for n,title,cid in [(16,'Power Backup, Generation & Power Quality','pd'),(17,'Automation, Instrumentation & Water','au'),(18,'Instrumentation & Control Rooms','instrumentation'),(19,'Building, Hygiene & Structures','bi'),(20,'Power, Energy & Water Plants','wp'),(21,'Process, Hygiene & Insulated Panels','process')]:
-        body+=profile_section(n,title,cid)
-        photos=[x for x in SOLUTIONS if x['group']==title]
-        body+='<div class="wrap application-gallery">'+''.join(f'<a class="application-photo" href="products.html#p-{x["products"][0]}"><img src="{E(x["img"])}" alt="{E(x["title"])}" loading="lazy" width="{x["w"]}" height="{x["h"]}"><span><b>{E(x["title"])}</b><small>{E(x["make"])}</small></span></a>' for x in photos)+'</div>'
-    body+=profile_section(22,'Our OEM Partners','partners')
-    body+='<nav class="section-nav wrap" aria-label="Product categories">'+''.join(f'<a href="products.html#cat-{c[0]}">{E(c[1])}</a>' for c in CATEGORIES)+'</nav>'
-    page('solutions.html','Our Solutions','Our Solutions · Chemotech International',body)
-
-def projects():
-    profile_page('projects.html','Our Clients',[(23,'Our Clients','clients'),(11,'Our Presence','presence')])
-    legacy='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=projects.html"><title>Company information</title>'+contact_stylesheet()+'</head><body><p><a href="projects.html">Our Clients</a> · <a href="about.html#company-details">Key Information</a></p><script>var h=location.hash;location.replace(h==="#partners"?"solutions.html#partners":h==="#company-details"?"about.html#company-details":"projects.html"+h)</script>'+contact_actions()+'</body></html>'
-    Path(OUT,'company-profile.html').write_text(legacy,encoding='utf-8',newline='\n')
 
 home(); about(); solutions(); products(); projects(); certifications(); contact(); quote()
 print(f"built: {N_PRODUCTS} products, {N_VARIANTS} variants, {N_MAKES} makes, {len(SOLUTIONS)} solution photos")

@@ -57,12 +57,26 @@ for path in ROOT.rglob('*'):
     except UnicodeError: continue
     assert not any(pattern.search(text) for pattern in private_patterns), f'Private pattern found in {path.relative_to(ROOT)}; value withheld.'
 pages=list(ROOT.glob('*.html'))
-# Require complete source sections on their assigned pages, not a shortened summary.
-section_pages={'index.html':[1,2],'about.html':[3,5,6,7,8,9,10],'solutions.html':[16,17,18,19,20,21,22],'projects.html':[11,23]}
-for filename,numbers in section_pages.items():
-    rendered=norm(html.unescape(re.sub(r'<[^>]+>',' ',(ROOT/filename).read_text(encoding='utf-8'))))
-    for number in numbers:
-        assert norm(company['profile_pages'][str(number)]) in rendered,f'Missing or abridged profile page {number}: {filename}'
+# Design is the approved 7ba7c25 layout; content is the final company profile.
+design=load('design-baseline.json')
+for relative,expected in design['assets'].items():
+    data=(ROOT/relative).read_bytes()
+    if Path(relative).suffix in ['.css','.js','.svg','.md','.html']: data=data.replace(b"\r\n",b"\n")
+    assert hashlib.sha256(data).hexdigest()==expected,f'Approved design asset changed: {relative}'
+about_text=norm(html.unescape(re.sub(r'<[^>]+>',' ',(ROOT/'about.html').read_text(encoding='utf-8'))))
+solutions_text=norm(html.unescape(re.sub(r'<[^>]+>',' ',(ROOT/'solutions.html').read_text(encoding='utf-8'))))
+copy=company['approved_content']
+for text in copy['about_paragraphs']+[copy['vision'],copy['mission_intro']]+copy['mission_commitments']+copy['team_bios']:
+    assert norm(text) in evidence, 'Company text is not from the final profile'
+    assert norm(text) in about_text, 'Missing approved company text on About'
+for text in [row[1] for row in copy['how_we_work']]+copy['execution_steps']+copy['why_work_with_us']:
+    assert norm(text) in evidence, 'Execution text is not from the final profile'
+    assert norm(text) in solutions_text, 'Missing execution text in Solutions'
+assert norm(company['pan']['number']) in about_text
+assert norm(company['pan']['note']) in about_text
+for bank in company['banking_audit']['banks']:
+    for value in bank.values(): assert norm(value) in about_text, 'Missing banking detail on About'
+assert norm(company['banking_audit']['auditor']) in about_text
 registrations=(ROOT/'certifications.html').read_text(encoding='utf-8')
 assert company['pan']['number'] in registrations and company['pan']['registered_on'] in registrations
 registration_text=norm(html.unescape(re.sub(r'<[^>]+>',' ',registrations)))
@@ -70,6 +84,7 @@ for identifier in re.findall(r'\b(?:\d{2}/\d{2}/\d{4}|[A-Z0-9][A-Z0-9/-]*\d[A-Z0
     assert norm(identifier) in registration_text,f'Missing registration identifier from profile page 4'
 for path in pages:
     text=path.read_text(encoding='utf-8')
+    assert not re.search(r'\bSECTION\s+0|INSIDE THIS PROFILE|profile-index|profile-transcript|09\s*·\s*OUR SOLUTIONS',html.unescape(text),re.I),f'PDF page structure appears in {path.name}'
     assert not spaced_letters.search(html.unescape(text)),f'Literal letter spacing remains in {path.name}'
     assert not re.search(r'332|50\+|Bonex|\bRecon\b',text),path
     for href in re.findall(r'(?:href|src)="([^"]+)"',text):
@@ -80,16 +95,6 @@ for path in pages:
         assert text.count('<h1>')==1,path
         assert 'rel="canonical"' in text and 'application/ld+json' in text,path
         for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>',text,re.S):json.loads(block)
-# The home index keeps its section numbering, not the PDF's page numbering.
-index_html=(ROOT/'index.html').read_text(encoding='utf-8')
-index_block=re.search(r'<nav aria-label="Inside this profile">(.*?)</nav>',index_html,re.S)
-assert index_block,'Missing home profile index'
-index_items=re.findall(r'<li><a href="([^"]+)"><span class="profile-index__number">(\d{2})</span><span>(.*?)</span></a></li>',index_block[1])
-assert [number for _,number,_ in index_items]==[f'{n:02d}' for n in range(1,12)]
-for href,number,title in index_items:
-    assert f'{number} {html.unescape(title)}' in company['profile_pages']['2'].splitlines()
-    filename,anchor=href.split('#')
-    assert re.search(r'\bid="'+re.escape(anchor)+'"',(ROOT/filename).read_text(encoding='utf-8')),f'Missing index target: {href}'
 # Regenerate elsewhere and compare all generated HTML byte-for-byte.
 with tempfile.TemporaryDirectory() as tmp:
     subprocess.run([sys.executable,str(ROOT/'tools/build.py'),tmp],check=True)
