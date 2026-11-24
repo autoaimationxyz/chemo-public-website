@@ -1,0 +1,886 @@
+[
+  {
+    "no": 1,
+    "name": "HT Panels",
+    "desc": "11 kV VCB / SF6 panels, indoor & outdoor kiosk type, HT metering",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Paikane",
+      "Trijal Electrikals",
+      "Recons",
+      "Neptune",
+      "Tricolite"
+    ],
+    "catalogue_no": 1,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 2,
+    "name": "LT / PCC & Distribution Panels",
+    "desc": "Main LT, PCC, MF & sub-distribution panels with ACB / MCCB incomers, bus bars & bus ducts",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Alpha MHO Enterprises",
+      "BVCS",
+      "Neptune"
+    ],
+    "catalogue_no": 2,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 3,
+    "name": "MCC & Motor Control Panels",
+    "desc": "DOL, star-delta, soft-starter & VFD feeders; control & machine control panels",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Trijal Electrikals",
+      "Alpha MHO Enterprises",
+      "BVCS",
+      "Shivalik",
+      "SPC Electrotech"
+    ],
+    "catalogue_no": 3,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 5,
+    "name": "APFC & Capacitor Panels",
+    "desc": "Automatic & fixed power-factor correction panels",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Alpha MHO Enterprises",
+      "BVCS",
+      "Paikane",
+      "Ducati (APFC relays)"
+    ],
+    "catalogue_no": 4,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 6,
+    "name": "Feeder Pillars & Street-Light Panels",
+    "desc": "Outdoor feeder pillars, timer-based street-lighting panels",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Alpha MHO Enterprises",
+      "BVCS",
+      "Electro Allied Products"
+    ],
+    "catalogue_no": 5,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 7,
+    "name": "Transformers",
+    "desc": "Oil & dry type, OLTC / OCTC, isolation & special-purpose transformers, CT / PT – cast resin",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Recons",
+      "Unimag",
+      "Pooja",
+      "Voltamp",
+      "Jindal Electric",
+      "ABB"
+    ],
+    "catalogue_no": 6,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 9,
+    "name": "Diesel Generator Sets",
+    "desc": "Silent / open, CPCB IV+, multi-brand as per customer's choice – supply, installation, synchronisation, service & spare parts",
+    "variants": [],
+    "note": "We are a leading supplier of multi-brand Diesel Generator Sets as per customer's choice. We also provide service and spare parts for generators of any brand.",
+    "main_makes": [
+      "Kirloskar",
+      "Paikane",
+      "Sterling",
+      "Mahindra",
+      "Cummins",
+      "Eicher",
+      "Volvo Penta"
+    ],
+    "catalogue_no": 7,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 4,
+    "name": "Synchronising & AMF Panels",
+    "desc": "DG–DG / DG–grid synchronising, auto load sharing, AMF & DG control panels",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Paikane",
+      "Alpha MHO Enterprises",
+      "BVCS",
+      "Shivalik",
+      "Deep Sea (controllers)",
+      "DEIF (controllers)"
+    ],
+    "catalogue_no": 8,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 8,
+    "name": "Compact / Unitised Substations",
+    "desc": "CSS / USS with HT switchgear, transformer & LT panel in one enclosure",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Schneider"
+    ],
+    "catalogue_no": 9,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 11,
+    "name": "Circuit Breakers",
+    "desc": "ACB, VCB, MCCB & MCB – microprocessor & thermo-magnetic releases",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "L&T",
+      "ABB",
+      "Recons (VCB)"
+    ],
+    "catalogue_no": 10,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 12,
+    "name": "Earth-Leakage Protection",
+    "desc": "ELCB, RCCB & RCBO – 30 / 100 / 300 mA",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Legrand"
+    ],
+    "catalogue_no": 11,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 13,
+    "name": "Distribution Boards",
+    "desc": "SPN / TPN, single & double door, IP-rated DBs",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Havells"
+    ],
+    "catalogue_no": 12,
+    "source_pages": [
+      12
+    ]
+  },
+  {
+    "no": 14,
+    "name": "Isolators, Changeover & ATS",
+    "desc": "Switch-disconnectors, manual changeover switches, automatic transfer switch",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "C&S Electric"
+    ],
+    "catalogue_no": 13,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 15,
+    "name": "Contactors, Starters & Relays",
+    "desc": "Contactors, motor starters, timers, numerical & APFC relays, HRC fuses",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Siemens"
+    ],
+    "catalogue_no": 14,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 16,
+    "name": "Control, Indication & Metering",
+    "desc": "Selector / rotary / toggle switches, push buttons, indicating lamps, terminal blocks, analogue & digital meters, trivector meters",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Elmex",
+      "Connectwell",
+      "WAGO",
+      "Automatic Electric",
+      "Phoenix Contact"
+    ],
+    "catalogue_no": 15,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 17,
+    "name": "HT & LT Power & Control Cables",
+    "desc": "XLPE / PVC armoured, copper & aluminium power and control cables",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "KEI",
+      "KEC International",
+      "Finolex"
+    ],
+    "catalogue_no": 16,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 18,
+    "name": "Wires & Special Cables",
+    "desc": "FRLS / FR wires, fire survival, instrumentation & signal, special, telephone & coaxial cables",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Survival Wire & Cables (SCL)",
+      "Plaza Wires",
+      "RR Kabel",
+      "Polycab"
+    ],
+    "catalogue_no": 17,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 19,
+    "name": "Cable Accessories & Containment",
+    "desc": "Jointing & termination kits, glands, lugs, cable trays, PVC / MS conduits, DWC HDPE pipes",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "3M",
+      "Dowells",
+      "Comet",
+      "M Seal"
+    ],
+    "catalogue_no": 18,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 20,
+    "name": "Wiring Accessories",
+    "desc": "Modular switches & sockets, industrial sockets, ceiling roses, laminated sheets",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Anchor",
+      "Century"
+    ],
+    "catalogue_no": 19,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 21,
+    "name": "Indoor & Industrial LED Lighting",
+    "desc": "LED fixtures, high-bay, flood & façade lighting, lighting control",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Philips",
+      "Bajaj"
+    ],
+    "catalogue_no": 20,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 22,
+    "name": "Street, Area & Solar Lighting",
+    "desc": "LED street lights, poles, high-mast & solar street lights",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Transrail",
+      "Valmont"
+    ],
+    "catalogue_no": 21,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 23,
+    "name": "Fans",
+    "desc": "Ceiling, exhaust & wall fans",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Crompton Greaves",
+      "Orient"
+    ],
+    "catalogue_no": 22,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 24,
+    "name": "Earthing & Lightning Protection",
+    "desc": "Pipe / plate & chemical earthing, ESE lightning arresters, surge protection devices",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Leesas",
+      "GPS",
+      "Wallis",
+      "Topbas",
+      "MSS"
+    ],
+    "catalogue_no": 23,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 25,
+    "name": "Fire Detection & Alarm",
+    "desc": "Conventional / addressable FDA panels, manual call points, response indicators, smoke & heat detectors, fire extinguishers",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Ravel",
+      "Notifier",
+      "Hochiki"
+    ],
+    "catalogue_no": 24,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 26,
+    "name": "Public Address & Sound Systems",
+    "desc": "PA amplifiers, speakers / hooters, microphones & PA consoles",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Ahuja",
+      "Bronx Systems",
+      "Brahler",
+      "Bosch"
+    ],
+    "catalogue_no": 25,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 27,
+    "name": "Online UPS & Data Centre Power",
+    "desc": "1 – 4000 kVA online & modular UPS, data-centre infrastructure",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Delta",
+      "Eaton",
+      "Krykard",
+      "Vertiv"
+    ],
+    "catalogue_no": 26,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 28,
+    "name": "Inverters, Batteries & Chargers",
+    "desc": "Inverters, lithium-ion & VRLA batteries, energy storage, battery chargers",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Exide",
+      "Amaron",
+      "Rocket",
+      "Jupiter",
+      "NPS"
+    ],
+    "catalogue_no": 27,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 29,
+    "name": "Voltage Stabilisers & Regulators",
+    "desc": "Servo stabilisers, static voltage regulators, automatic voltage controllers, AC variable supplies",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Krykard",
+      "Jindal Electric",
+      "BVCS",
+      "Recons"
+    ],
+    "catalogue_no": 28,
+    "source_pages": [
+      13
+    ]
+  },
+  {
+    "no": 30,
+    "name": "Harmonic Filters & PF Correction",
+    "desc": "AHF (PQC), harmonic filters, power capacitors, VAR generators",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Delta"
+    ],
+    "catalogue_no": 29,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 31,
+    "name": "Energy Management System",
+    "desc": "Energy metering, monitoring & dashboards",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Delta"
+    ],
+    "catalogue_no": 30,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 32,
+    "name": "Solar Power Systems",
+    "desc": "Rooftop & ground-mounted, on / off-grid, solar inverters",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Solary Solutions",
+      "Techno Power",
+      "Steam Force",
+      "IAVS"
+    ],
+    "catalogue_no": 31,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 33,
+    "name": "EV Chargers",
+    "desc": "AC wall-mount & DC fast chargers",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Delta"
+    ],
+    "catalogue_no": 32,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 34,
+    "name": "Electrical Motors & Actuators",
+    "desc": "LT induction motors IE2 / IE3, actuator motors",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Marathon"
+    ],
+    "catalogue_no": 33,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 35,
+    "name": "VFD & Servo Drives",
+    "desc": "Variable frequency drives, servo motors & drives",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Delta"
+    ],
+    "catalogue_no": 34,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 36,
+    "name": "PLC, HMI & SCADA",
+    "desc": "PLC, HMI, SMPS, SCADA, industrial PCs & IIoT",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Delta"
+    ],
+    "catalogue_no": 35,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 37,
+    "name": "Plant Automation & Robotics",
+    "desc": "Plant & machine automation, industrial robots, automatic dam-gate control",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Delta"
+    ],
+    "catalogue_no": 36,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 38,
+    "name": "Flow, Level & Pressure Instruments",
+    "desc": "Electromagnetic & ultrasonic flow meters, radar / ultrasonic level transmitters, level gauges & switches, pressure transmitters, sensors, power-quality & test instruments",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "SBEM",
+      "Toshcon",
+      "Baumer",
+      "Krykard"
+    ],
+    "catalogue_no": 37,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 57,
+    "name": "Water Quality Analysers",
+    "desc": "Online residual chlorine, turbidity, pH / ORP & conductivity, BOD / COD analysers for water supply & wastewater",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Toshcon",
+      "SBEM",
+      "Baumer"
+    ],
+    "catalogue_no": 38,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 39,
+    "name": "Water Treatment Plants (WTP)",
+    "desc": "Industrial, institutional & township WTP, filtration & clarification",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Micro Filteration Technologies"
+    ],
+    "catalogue_no": 39,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 40,
+    "name": "Effluent Treatment Plants (ETP)",
+    "desc": "ETP, effluent recycling & zero-liquid discharge",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Micro Filteration Technologies"
+    ],
+    "catalogue_no": 40,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 41,
+    "name": "Sewage Treatment Plants (STP)",
+    "desc": "MBBR, SBR & MBR sewage treatment plants",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Micro Filteration Technologies"
+    ],
+    "catalogue_no": 41,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 42,
+    "name": "RO, DM, Softening & UF Plants",
+    "desc": "Industrial RO, DM, softeners, UF & packaged drinking water plants",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Micro Filteration Technologies",
+      "Dow (membranes)",
+      "Hydramem (membranes)"
+    ],
+    "catalogue_no": 42,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 43,
+    "name": "Water Treatment Components & O&M",
+    "desc": "Pumps, membranes, FRP vessels, media, MBBR media, dosing & annual O&M",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Micro Filteration Technologies",
+      "Grundfos",
+      "Lubi",
+      "CRI",
+      "Pentair",
+      "Ion Exchange",
+      "KSB"
+    ],
+    "catalogue_no": 43,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 44,
+    "name": "Steam, Valves & Piping",
+    "desc": "Steam lines, PRV / PRS, condensate recovery, steam traps, control / butterfly / normal / SS valves, SS & compressed-air piping, fabrication & tanks",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Jindal Steel",
+      "KSB"
+    ],
+    "catalogue_no": 44,
+    "source_pages": [
+      14
+    ]
+  },
+  {
+    "no": 45,
+    "name": "Process Chemicals & Lubrication",
+    "desc": "Water-treatment chemicals, DE filter aid, conveyor lubrication chemicals & systems",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Chemotech"
+    ],
+    "catalogue_no": 45,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 46,
+    "name": "Hygiene Stations",
+    "desc": "Touch-free SS 304 hygiene & cleanroom-entry systems",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Nexgen Hygiene Systems"
+    ],
+    "catalogue_no": 46,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 47,
+    "name": "Building Management System",
+    "desc": "BMS with HVAC & lighting integration",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Loytec-Delta"
+    ],
+    "catalogue_no": 47,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 48,
+    "name": "Lifts",
+    "desc": "Passenger & goods lifts",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Otis",
+      "Johnson",
+      "Mitsubishi"
+    ],
+    "catalogue_no": 48,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 49,
+    "name": "Air-Conditioning & Ventilation",
+    "desc": "Split ACs, basement ventilation",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Daikin",
+      "Voltas"
+    ],
+    "catalogue_no": 49,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 50,
+    "name": "LED Screens & Video Walls",
+    "desc": "Indoor / outdoor LED screens, control-room video walls",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Delta",
+      "Xtreme Media",
+      "Bronx Systems"
+    ],
+    "catalogue_no": 50,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 51,
+    "name": "Pre-Fab Structures & Material Handling",
+    "desc": "PUF / PIR & rockwool panels, porta cabins, cold rooms, clean rooms, insulated doors, refrigerated vans, pallets & palletisers",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Dignus Infra"
+    ],
+    "catalogue_no": 51,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 52,
+    "name": "Structured Cabling & Networking (LAN)",
+    "desc": "Cat6A & fibre cabling, face plates, switches, routers, PoE switches & racks",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "D-Link",
+      "TP-Link",
+      "Cisco",
+      "Syrotech"
+    ],
+    "catalogue_no": 52,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 53,
+    "name": "CCTV & Security",
+    "desc": "IP / analogue CCTV cameras, network video recorders",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Vigilance Technology & Services",
+      "CP Plus",
+      "Prama",
+      "Sparsh",
+      "Bronx Systems"
+    ],
+    "catalogue_no": 53,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 54,
+    "name": "IT & Communication",
+    "desc": "Workstations, FHD displays, IP-PBX / EPABX & IP phones",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Lenovo",
+      "HP",
+      "Dell",
+      "Grandstream"
+    ],
+    "catalogue_no": 54,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 55,
+    "name": "Electrical Installation & Contracting",
+    "desc": "Licensed contractor (Bihar & Delhi): internal & external electrification, substation, cabling & earthing works",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Chemotech"
+    ],
+    "catalogue_no": 55,
+    "source_pages": [
+      15
+    ]
+  },
+  {
+    "no": 56,
+    "name": "Testing, Commissioning, O&M & AMC",
+    "desc": "Testing & commissioning, troubleshooting, preventive maintenance & AMC for all supplied systems",
+    "variants": [],
+    "note": "",
+    "main_makes": [
+      "Chemotech"
+    ],
+    "catalogue_no": 56,
+    "source_pages": [
+      15
+    ]
+  }
+]

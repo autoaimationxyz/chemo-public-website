@@ -1,0 +1,26 @@
+name: Pre-launch checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python tools/content-check.py
+      - run: npm install --prefix "$RUNNER_TEMP/chemotech-checks" playwright@1.62.1 axe-core@4.10.3
+      - run: "$RUNNER_TEMP/chemotech-checks/node_modules/.bin/playwright install --with-deps chromium"
+      - name: Browser and accessibility checks
+        env:
+          NODE_PATH: ${{ runner.temp }}/chemotech-checks/node_modules
+        run: |
+          python -m http.server 8080 --bind 127.0.0.1 > /tmp/chemotech-server.log 2>&1 &
+          node tools/browser-check.cjs
+          node tools/journey-check.cjs
+          node tools/accessibility-check.cjs

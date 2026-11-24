@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://autoaimationxyz.github.io/chemo-public-website/sitemap.xml

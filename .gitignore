@@ -1,0 +1,5 @@
+preview/
+
+# Confidential local checks must never be committed.
+/tools/private-patterns.txt
+__pycache__/

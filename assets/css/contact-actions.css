@@ -1,0 +1,38 @@
+/* First-party contact links; keep product selection controls clear. */
+.contact-actions {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right, 0px));
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 45;
+  display: flex;
+  gap: 12px;
+  font-family: inherit;
+}
+.contact-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 2px solid #fff;
+  border-radius: 28px;
+  background: #075e54;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  box-shadow: 0 3px 12px #0003;
+}
+.contact-actions a:hover { background: #064b43; color: #fff; }
+.contact-actions a:focus-visible { outline: 3px solid #00008b; outline-offset: 3px; }
+.contact-actions .contact-actions__call { display: none; background: #00008b; }
+body { padding-bottom: 92px; }
+body.has-tray { padding-bottom: 188px; }
+body.has-tray .contact-actions { bottom: calc(108px + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 640px) {
+  .contact-actions { left: max(12px, env(safe-area-inset-left, 0px)); right: max(12px, env(safe-area-inset-right, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+  .contact-actions a { flex: 1; padding-inline: 12px; }
+  .contact-actions .contact-actions__call { display: inline-flex; }
+}
+@media print { .contact-actions { display: none; } body, body.has-tray { padding-bottom: 0; } }
